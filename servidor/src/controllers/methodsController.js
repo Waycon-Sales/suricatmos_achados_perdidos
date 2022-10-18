@@ -142,10 +142,7 @@ const controller = {
                                 console.log('file deleted successfully');
                             }) ;
                           });
-                        
-                        
-                    
-                        
+                         
                         let objectUpdate = await objectController.updateImageObject(pathImageOld, object.id);
                                             
                         res.json({
@@ -193,6 +190,77 @@ const controller = {
             });
         }
     },
+
+    async selectAllObjectsType(req,res){
+        const object = new ObjectModel(req.body);
+        if(req.body != {}){
+            if(object.tipo != null && object.tipo != ""){
+                try{
+                    let allObjectsType = await  objectController.selectAllObjectsForType(object);
+                    if(allObjectsType != ""){
+                        res.json({
+                            "code": 200,
+                            "message": "sucess",
+                            allObjectsType
+                        });             
+                    }else{
+                        res.json({
+                            "code": 200,
+                            "message": "lista vazia",
+                            allObjectsType
+                        });
+                    }
+                }catch(e){
+                    res.json({
+                        "code": 500,
+                        "message": "Erro inesperado do servidor",
+                       
+                    });
+                }
+                  
+            }else{
+                res.json({
+                    "code": 400,
+                    "message": "erro - campo de tipo vazio",
+                   
+                });
+            }
+        }else{
+            res.json({
+                "code": 400,
+                "message": "erro body vazio",
+               
+            });
+        }
+    },
+
+    async selectAllObjects(req,res){
+                try{
+                    let allObjects = await  objectController.selectAllObjects();
+                    if(allObjects != ""){
+                        res.json({
+                            "code": 200,
+                            "message": "sucess",
+                            allObjects
+                        });             
+                    }else{
+                        res.json({
+                            "code": 200,
+                            "message": "lista vazia",
+                            allObjects
+                        });
+                    }
+                }catch(e){
+                    console.log(e.message)
+                    res.json({
+                        "code": 500,
+                        "message": "Erro inesperado do servidor",
+                       
+                    });
+                }
+    },
+
+    
 
 }
 

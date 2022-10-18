@@ -31,6 +31,18 @@ const objectController = {
                 db.run('UPDATE objetos SET titulo = ?, local = ?, categoria = ?, tipo = ?, status = ?, desc = ? WHERE id = ?', [object.titulo, object.local, object.categoria, object.tipo, object.status,object.desc, object.id]);
                 return db.get('SELECT codObjeto FROM objetos WHERE id = ? ORDER BY id DESC LIMIT 1', [object.id]).then(res=>res);
             });
+        },
+
+        async selectAllObjectsForType(object){
+            return dbOpen.openDb().then(db=>{
+                return db.all('SELECT * FROM objetos WHERE TIPO = ?',[object.tipo]).then(res=>res);
+            });
+        },
+
+        async selectAllObjects(){
+            return dbOpen.openDb().then(db=>{
+                return db.all('SELECT * FROM objetos').then(res=>res);
+            });
         }
 
 

@@ -23,5 +23,7 @@ router.get('/', controller.bemVinde);
 router.post('/insertObject', upload.single("imagemObject"),controller.inserirObjeto);
 router.post('/updateObject',controller.atualizarObjeto);
 router.post('/updateImageObject', upload.single("imagemObject"),controller.atualizarImagemObjeto);
+router.post('/selectAllObjectsType',controller.selectAllObjectsType);
+router.get('/selectAllObjects',controller.selectAllObjects);
 
 export default router;
