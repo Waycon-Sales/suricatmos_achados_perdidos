@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../docs/flickity.css" media="screen">
+    
+    <title>Sistemas e Mídias Digitais - Achados e Perdidos</title>
+</head>
+
+<body>
+    <script src="scripts/script.js"></script>
+    <script src="../docs/flickity.pkgd.min.js"></script>    
+    <nav class="navbar">
+        <div class="buttonNav">
+            <a id="linkNav1" class="active">
+                <img src="Images/Icons/iconHomeActive.png" class="iconNav" alt="Início">
+                <span class="navText">Início</span>
+            </a>
+        </div>
+        <div class="buttonNavPlus">
+            <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
+        </div>
+        <div class="buttonNav">
+            <a id="linkNav2">
+                <img src="images/icons/iconCategoriesInactive.png" class="iconNav" alt="Categorias">
+                <span class="navText">Categorias</span>
+            </a>
+        </div>
+    </nav>
+    <main class="mainContent">
+        <div class="topContent">
+            <div class="topContentText">
+            <p>Perdeu ou achou algo?</p>
+            <P>Nós te ajudamos!</p>
+            </div>
+            <div class="adminLogin">
+                <a>
+                   <img src="images/Icons/iconAdminLogin.png" class="iconAdmin" alt="LoginAdmin">
+                   <span class="adminText">Admin</span> 
+                </a>
+            </div>   
+        </div>
+        <div class="bannerContent">
+            <img src="bannerImage.png" class="bannerImage" alt="ImagemBanner">
+        </div>
+        <div class="searchBar">
+            <img src="images/Icons/iconSearch.png" class="searchImage" alt="LupaPesquisa">
+            <input type="text" id="searchContent" name="searchContent" placeholder="Buscar por título, tipo ou código">
+        </div>
+        <div class="gallery js-flickity" data-flickity-options='{"freeScroll":true,"wrapAround":true}'>
+            <div class="gallery-cell">
+                <a>
+                    <img src="images/Icons/iconBottle.png" class="iconCard" alt="Água Icone">
+                    <span>Garrafas de</span>
+                    <span>água</span>
+                </a>
+            </div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+        </div>
+    </main>
+    
+</body>
+</html>
+
+<script>
+
+</script>
