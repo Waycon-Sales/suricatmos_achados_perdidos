@@ -43,6 +43,26 @@ const objectController = {
             return dbOpen.openDb().then(db=>{
                 return db.all('SELECT * FROM objetos').then(res=>res);
             });
+        },
+
+        async selectOneObject(filter){
+            filter = "%"+filter+"%";
+            console.log(filter);
+            return dbOpen.openDb().then(db=>{
+                return db.all('SELECT * FROM objetos WHERE titulo LIKE ? OR tipo LIKE ? OR codObjeto LIKE ?', [filter,filter,filter]).then(res=>res);
+            });
+        },
+
+        async selectIdObject(id){
+            return dbOpen.openDb().then(db=>{
+                return db.get('SELECT id FROM objetos WHERE id = ?', [id]).then(res=>res);
+            });
+        },
+
+        async deleteObject(id){
+            return dbOpen.openDb().then(db=>{
+                return db.get('DELETE FROM objetos WHERE id = ?', [id]).then(res=>res);
+            });
         }
 
 

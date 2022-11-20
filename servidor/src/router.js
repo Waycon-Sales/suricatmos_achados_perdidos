@@ -25,5 +25,12 @@ router.post('/updateObject',controller.atualizarObjeto);
 router.post('/updateImageObject', upload.single("imagemObject"),controller.atualizarImagemObjeto);
 router.post('/selectAllObjectsType',controller.selectAllObjectsType);
 router.get('/selectAllObjects',controller.selectAllObjects);
+router.post('/adm/loginAdm',controller.loginAdm);
+router.post('/adm/resetPw',controller.resetPw);
+router.get('/selectAllCategories',controller.selectAllCategories);
+router.post('/deleteObject',controller.deleteObject);
+router.post('/selectOneObject',controller.selectOneObject);
+
+
 
 export default router;

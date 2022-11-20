@@ -14,7 +14,7 @@ app.use(express.json({limit: '15mb'}));
 app.use(express.urlencoded({extended: true, limit: '15mb'}));
 
 
-//openDb(); //Roda uma unica vez para gerar aquivo database.db
+//dbOpen.openDb(); //Roda uma unica vez para gerar aquivo database.db
 //dbTables.createTables(); // roda pra criar as tabelas
 //dbTables.dropTables();
 app.listen(8080, () => {

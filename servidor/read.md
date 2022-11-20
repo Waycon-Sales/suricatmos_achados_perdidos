@@ -10,3 +10,5 @@
 ## npm install sqlite3 --save
 ## npm install --save multer
 ## npm install fs
+## npm install --save nodemailer
+## npm install dotenv

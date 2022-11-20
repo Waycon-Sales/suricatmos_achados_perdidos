@@ -6,7 +6,7 @@ import { open } from 'sqlite'
 const dbOpen = {
 async  openDb () {
   return open({
-    filename: './controllers/database.db',
+    filename: './database.db',
     driver: sqlite3.Database
   })
 }
