@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="../docs/flickity.css" media="screen">
+    <link rel="stylesheet" href="../Flickity/flickity.css" media="screen">
      
     <title>Sistemas e Mídias Digitais - Achados e Perdidos</title>
 </head>
 
 <body>
     <script src="scripts/script.js"></script>
-    <script src="../docs/flickity.pkgd.min.js"></script> 
+    <script src="../Flickity/flickity.pkgd.min.js"></script> 
     <script src="scripts/jquery-3.6.1.min.js"></script> 
     
     <nav class="navbar">
@@ -105,9 +105,10 @@
 </html>
 
 <script>
-    var findOpenButtonCad = $(".buttonNavPlus");
-    var findModalCad = $("#modalCadStart");
-    findOpenButtonCad.click(findModalCad.css("display", "block"));
-    var findCloseCadButton = $("#closeCadStart");
-    findCloseCadButton.click(findModalCad.css("display","none"));   
+    $("#btnOpenCadStart").click(function(){
+        $("#modalCadStart").css("display","block");
+    })
+    $("#closeCadStart").click(function(){
+        $("#modalCadStart").css("display","none");
+    })   
 </script>
