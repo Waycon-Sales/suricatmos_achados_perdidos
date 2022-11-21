@@ -157,6 +157,8 @@ https://flickity.metafizzy.co
   border-radius: 10px;
   margin-right: 10px;
   font-size: 12px;
+  font-weight: 500;
+  line-height: 97%;
   border: 1px solid var(--color-main1);
   display: flex;
   flex-direction: column;
@@ -175,10 +177,18 @@ https://flickity.metafizzy.co
   margin-bottom: -5px;
 }
 
-.gallery-cell.is-selected {
+.gallery-cell:hover {
   background: var(--color-main1);
   border: 0px;
   color: var(--color-main3);
+}
+
+.flickity-button{
+  display: none;
+}
+
+.flickity-page-dots{
+  display: none;
 }
 
 /* cell number */
