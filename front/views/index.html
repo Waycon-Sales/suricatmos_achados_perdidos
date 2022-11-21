@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../docs/flickity.css" media="screen">
-    
+     
     <title>Sistemas e Mídias Digitais - Achados e Perdidos</title>
 </head>
 
 <body>
     <script src="scripts/script.js"></script>
-    <script src="../docs/flickity.pkgd.min.js"></script>    
+    <script src="../docs/flickity.pkgd.min.js"></script> 
+    <script src="scripts/jquery-3.6.1.min.js"></script> 
+    
     <nav class="navbar">
         <div class="buttonNav">
             <a id="linkNav1" class="active">
@@ -21,7 +23,9 @@
             </a>
         </div>
         <div class="buttonNavPlus">
+            <button id="btnOpenCadStart">
             <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
+        </button>
         </div>
         <div class="buttonNav">
             <a id="linkNav2">
@@ -33,15 +37,9 @@
     <main class="mainContent">
         <div class="topContent">
             <div class="topContentText">
-            <p>Perdeu ou achou algo?</p>
+            <p class="topTextLine">Perdeu ou achou algo?</p>
             <P>Nós te ajudamos!</p>
-            </div>
-            <div class="adminLogin">
-                <a>
-                   <img src="images/Icons/iconAdminLogin.png" class="iconAdmin" alt="LoginAdmin">
-                   <span class="adminText">Admin</span> 
-                </a>
-            </div>   
+            </div>              
         </div>
         <div class="bannerContent">
             <img src="bannerImage.png" class="bannerImage" alt="ImagemBanner">
@@ -50,6 +48,8 @@
             <img src="images/Icons/iconSearch.png" class="searchImage" alt="LupaPesquisa">
             <input type="text" id="searchContent" name="searchContent" placeholder="Buscar por título, tipo ou código">
         </div>
+        <div class="categoriesScroll">
+        <p>Categorias</p>
         <div class="gallery js-flickity" data-flickity-options='{"freeScroll":true,"wrapAround":true}'>
             <div class="gallery-cell">
                 <a>
@@ -63,11 +63,51 @@
             <div class="gallery-cell"></div>
             <div class="gallery-cell"></div>
         </div>
+        <div class="foundRecently">
+            <div class="topFoundText">
+                <span>Achados recentemente</span>
+                <a>Ver todos</a>
+            </div>
+        </div>
+    </div>
     </main>
+
+    <!-- MODAL CADASTRO DE OBJETO -->
+
+     <div class="modalCadStart" id="modalCadStart">
+        <div class="modalCadTop">
+            <div class="buttonCloseCad">
+            <button id="closeCadStart">
+                <img src="images/Icons/iconReturn.png" alt="Botão Retorno" class="returnIcon">
+            </button>
+        </div>
+            <div class="contentButtonsCad">
+            <div class="modalCadText">
+                <h1>Olá, bem vindo(a)!</h1>
+                <p>Você achou ou perdeu algo?</p>
+            </div>
+            
+            <div class="buttonsCadStart">
+                <button class="buttonCad">
+                    <img src="images/Icons/iconPlaceholder.png" alt="Botão Perdi" class="iconButtonCad">
+                    <span>Perdi</span>
+                </button>
+                <button class="buttonCad">
+                    <img src="images/Icons/iconPlaceholder.png" alt="Botão Achei" class="iconButtonCad">
+                    <span>Achei</span>
+                </button>
+            </div>
+        </div>
+        </div>   
+     </div>
     
 </body>
 </html>
 
 <script>
-
+    var findOpenButtonCad = $(".buttonNavPlus");
+    var findModalCad = $("#modalCadStart");
+    findOpenButtonCad.click(findModalCad.css("display", "block"));
+    var findCloseCadButton = $("#closeCadStart");
+    findCloseCadButton.click(findModalCad.css("display","none"));   
 </script>
