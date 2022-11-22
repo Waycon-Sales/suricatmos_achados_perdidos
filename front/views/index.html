@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../Flickity/flickity.css" media="screen">
-     
+
     <title>Sistemas e Mídias Digitais - Achados e Perdidos</title>
 </head>
 
 <body>
     <script src="scripts/script.js"></script>
-    <script src="../Flickity/flickity.pkgd.min.js"></script> 
-    <script src="scripts/jquery-3.6.1.min.js"></script> 
-    
+    <script src="../Flickity/flickity.pkgd.min.js"></script>
+    <script src="scripts/jquery-3.6.1.min.js"></script>
+
     <nav class="navbar">
         <div class="buttonNav">
             <a id="linkNav1" class="active">
@@ -24,8 +25,8 @@
         </div>
         <div class="buttonNavPlus">
             <button id="btnOpenCadStart">
-            <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
-        </button>
+                <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
+            </button>
         </div>
         <div class="buttonNav">
             <a id="linkNav2">
@@ -37,9 +38,9 @@
     <main class="mainContent">
         <div class="topContent">
             <div class="topContentText">
-            <p class="topTextLine">Perdeu ou achou algo?</p>
-            <P>Nós te ajudamos!</p>
-            </div>              
+                <p class="topTextLine">Perdeu ou achou algo?</p>
+                <P>Nós te ajudamos!</p>
+            </div>
         </div>
         <div class="bannerContent">
             <img src="bannerImage.png" class="bannerImage" alt="ImagemBanner">
@@ -49,66 +50,248 @@
             <input type="text" id="searchContent" name="searchContent" placeholder="Buscar por título, tipo ou código">
         </div>
         <div class="categoriesScroll">
-        <p>Categorias</p>
-        <div class="gallery js-flickity" data-flickity-options='{"freeScroll":true,"wrapAround":true}'>
-            <div class="gallery-cell">
-                <a>
-                    <img src="images/Icons/iconBottle.png" class="iconCard" alt="Água Icone">
-                    <span>Garrafas de</span>
-                    <span>água</span>
-                </a>
+            <p>Categorias</p>
+            <div class="gallery js-flickity" data-flickity-options='{"freeScroll":true,"wrapAround":true}'>
+                <div class="gallery-cell">
+                    <a>
+                        <img src="images/Icons/iconBottle.png" class="iconCard" alt="Água Icone">
+                        <span>Garrafas de</span>
+                        <span>água</span>
+                    </a>
+                </div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
             </div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-        </div>
-        <div class="foundRecently">
-            <div class="topFoundText">
-                <span>Achados recentemente</span>
-                <a>Ver todos</a>
+            <div class="foundRecently">
+                <div class="topFoundText">
+                    <span>Achados recentemente</span>
+                    <a>Ver todos</a>
+                </div>
             </div>
         </div>
-    </div>
     </main>
 
     <!-- MODAL CADASTRO DE OBJETO -->
 
-     <div class="modalCadStart" id="modalCadStart">
+    <div class="modalCadStart" id="modalCadStart">
         <div class="modalCadTop">
             <div class="buttonCloseCad">
-            <button id="closeCadStart">
-                <img src="images/Icons/iconReturn.png" alt="Botão Retorno" class="returnIcon">
-            </button>
-        </div>
+                <button id="closeCadStart" class="buttonReturn">
+                    <img src="images/Icons/iconReturn.png" alt="Botão Retorno" class="returnIcon">
+                </button>
+            </div>
             <div class="contentButtonsCad">
-            <div class="modalCadText">
-                <h1>Olá, bem vindo(a)!</h1>
-                <p>Você achou ou perdeu algo?</p>
-            </div>
-            
-            <div class="buttonsCadStart">
-                <button class="buttonCad">
-                    <img src="images/Icons/iconPlaceholder.png" alt="Botão Perdi" class="iconButtonCad">
-                    <span>Perdi</span>
-                </button>
-                <button class="buttonCad">
-                    <img src="images/Icons/iconPlaceholder.png" alt="Botão Achei" class="iconButtonCad">
-                    <span>Achei</span>
-                </button>
+                <div class="modalCadText">
+                    <h1>Olá, bem vindo(a)!</h1>
+                    <p>Você achou ou perdeu algo?</p>
+                </div>
+
+                <div class="buttonsCadStart">
+                    <button class="buttonCad" id="buttonLostCad">
+                        <img src="images/Icons/iconPlaceholder.png" alt="Botão Perdi" class="iconButtonCad">
+                        <span>Perdi</span>
+                    </button>
+                    <button class="buttonCad">
+                        <img src="images/Icons/iconPlaceholder.png" alt="Botão Achei" class="iconButtonCad">
+                        <span>Achei</span>
+                    </button>
+                </div>
             </div>
         </div>
-        </div>   
-     </div>
-    
+    </div>
+
+    <!-- MODAL CADASTRO DE OBJETO PERDIDO -->
+
+    <div class="modalCadLost" id="modalCadLost">
+        <div class="modalCadTop" style="gap: 30px;">
+            <div class="buttonCoseCad">
+                <button class="buttonReturn" id="returnCadStart">
+                    <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
+                </button>
+            </div>
+            <div class="lostTextTop">
+                <h1>Cadastro de objeto perdido</h1>
+                <p>Texto de explicação</p>
+            </div>
+            <form>
+                <div class="userInfoCad">
+
+                    <label for="lostName">Nome</label>
+                    <div>
+                        <input type="text" name="lostName" id="lostName">
+                    </div>
+                    <label for="lostEmail">E-mail para notificação</label>
+                    <div>
+                        <input type="text" name="lostEmail" id="lostEmail">
+                    </div>
+                    <label for="lostTitle">Título da postagem</label>
+                    <div>
+                        <input type="text" name="lostTitle" id="lostTitle">
+                    </div>
+                    <label for="lostCateg">Categoria</label>
+                    <div class="lostCategDropdown">
+                        <select name="lostCateg" id="lostCateg" required>
+                            <option value="lostCellphone">Celulares</option>
+                            <option value="lostDocuments">Documentos</option>
+                            <option value="lostSqueezer">Garrafas de água</option>
+                            <option value="lostStationery">Papelaria</option>
+                            <option value="lostAcessory">Acessórios</option>
+                            <option value="lostUmbrella">Guarda-chuvas</option>
+                            <option value="lostOther">Outros</option>
+                        </select>
+                        <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                    </div>
+                    <label for="lostTextarea">Descrição</label>
+                    <div class="lostDescription">
+                        <textarea name="lostTextarea" id="lostTextarea" cols="41" rows="5"></textarea>
+                    </div>
+                    <label style="margin-bottom: 30px;" for="lostPlaceGeral">Possível local em que perdeu</label>
+                    <div class="lostPlaceDouble">
+                        <div class="lostPlaceGeral" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="lostPlaceGeral" id="lostPlaceGeral">
+                                    <option value="lostGroundFloor">Térreo</option>
+                                    <option value="lostFirstFloor">Primeiro Andar</option>
+                                    <option value="lostSecondFloor">Segundo Andar</option>
+                                    <option value="lostExtArea">Área Externa</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                        <div class="lostPlaceEspecific" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificGroundFloor">
+                                    <option value="lostReception">Recepção</option>
+                                    <option value="lostCorridor">Corredor</option>
+                                    <option value="lostDrinking">Bebedouro</option>
+                                    <option value="lostRooms">Salas</option>
+                                    <option value="lostAcademic">Centro acadêmico</option>
+                                    <option value="lostCreativity">Laboratório de Criatividade</option>
+                                    <option value="lostBathroom">Banheiros</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificFirstFloor">
+                                    <option value="lostMezzanine">Mezanino</option>
+                                    <option value="lostDrinkingFir">Bebedouro</option>
+                                    <option value="lostBathroomFir">Banheiro</option>
+                                    <option value="lostCorridorFir">Corredor</option>
+                                    <option value="lostLabs">Laboratórios</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificSecondFloor">
+                                    <option value="lostMezzanineSec">Mezanino</option>
+                                    <option value="lostDrinkingSec">Bebedouro</option>
+                                    <option value="lostPantry">Copa</option>
+                                    <option value="lostSupervisor">Coordenação</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificExternalArea">
+                                    <option value="lostFront">Frente do bloco</option>
+                                    <option value="lostParking">Estacionamento</option>
+                                    <option value="lostCanteen">Cantina</option>
+                                    <option value="lostRoad">Estrada</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lostImageUpload" style="background-color: transparent;">
+                        <label class="imgUploadTitle" for="lostImgObject">Imagens</label>
+                        <div class="lostImgObject" style="background-color: transparent;">
+                            <div class="uploadImage">
+                                <input type="file" name="lostImgObject" style="display: none;" id="lostImgObject"
+                                    accept="image/jpeg, image/png">
+                                <label class="imgIcon" for="lostImgObject"><img src="images/Icons/iconAddImg.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="uploadedImage">
+                                <img src="" alt="Imagem Upada" class="uplodadeImageSrc">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitCancelButtons">
+                        <div class="resetButton">
+                            <input type="reset" id="lostObjectReset" style="background-color: transparent;">
+                        </div>
+                        <div class="submitButton">
+                            <input type="submit" id="lostObjectSubmit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>
 
 <script>
-    $("#btnOpenCadStart").click(function(){
-        $("#modalCadStart").css("display","block");
+    $("#btnOpenCadStart").click(function () {
+        $("#modalCadStart").css("display", "block");
     })
-    $("#closeCadStart").click(function(){
-        $("#modalCadStart").css("display","none");
-    })   
+
+    $("#closeCadStart").click(function () {
+        $("#modalCadStart").css("display", "none");
+    })
+
+    $("#buttonLostCad").click(function () {
+        $("#modalCadStart").css("display", "none");
+        $("#modalCadLost").css("display", "block");
+    })
+    $("#returnCadStart").click(function () {
+        $("#modalCadStart").css("display", "block");
+        $("#modalCadLost").css("display", "none");
+    })
+
+    function changeVals() {
+        var lostPlace = $("#lostPlaceGeral").val();
+        if (lostPlace == 'lostGroundFloor') {
+            $(".especificGroundFloor").attr("style", "display:block;");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "lostPlaceEspecific");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (lostPlace == 'lostFirstFloor') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:block;");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "lostPlaceEspecific");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (lostPlace == 'lostSecondFloor') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:block;");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "lostPlaceEspecific");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (lostPlace == 'lostExtArea') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:block;");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "lostPlaceEspecific");
+        }
+    }
+    $("select").change(changeVals);
+    changeVals();
+
+
+
+
 </script>
