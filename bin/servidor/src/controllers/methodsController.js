@@ -34,6 +34,7 @@ const controller = {
     },
 
     async inserirObjeto(req,res){
+        console.log(req.body);
         if(req.body != {}){
             const object = new ObjectModel(JSON.parse(req.body.text));
             if(object.titulo != null && object.titulo != "" &&

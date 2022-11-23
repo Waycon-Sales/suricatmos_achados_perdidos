@@ -15,8 +15,8 @@ app.use(express.urlencoded({extended: true, limit: '15mb'}));
 
 
 //dbOpen.openDb(); //Roda uma unica vez para gerar aquivo database.db
-//dbTables.createTables(); // roda pra criar as tabelas
-//dbTables.dropTables();
+dbTables.createTables(); // roda pra criar as tabelas
+//dbTables.dropTables(); // limpa tabelas
 app.listen(8080, () => {
     console.log("Server started in http://localhost:8080")
 });
