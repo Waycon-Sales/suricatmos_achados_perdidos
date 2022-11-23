@@ -87,18 +87,22 @@
             <div class="contentButtonsCad">
                 <div class="modalCadText">
                     <h1>Olá, bem vindo(a)!</h1>
-                    <p>Você achou ou perdeu algo?</p>
+                    <p>Você <b style="color: #DDBA30;">perdeu</b> ou <b style="color:#4A35AE;">achou</b> algo?</p>
                 </div>
-
                 <div class="buttonsCadStart">
-                    <button class="buttonCad" id="buttonLostCad">
-                        <img src="images/Icons/iconPlaceholder.png" alt="Botão Perdi" class="iconButtonCad">
-                        <span>Perdi</span>
+                    <button class="buttonCad" style="background-color: var(--color-mainY);" id="buttonLostCad">
+                        <img src="images/Icons/iconLost.png" alt="Botão Perdi" class="iconButtonCad">
+                        <span>Perdi algo</span>
                     </button>
-                    <button class="buttonCad" id="buttonFindCad">
-                        <img src="images/Icons/iconPlaceholder.png" alt="Botão Achei" class="iconButtonCad">
-                        <span>Achei</span>
+                    <button class="buttonCad" style="background-color: var(--color-mainB);" id="buttonFindCad">
+                        <img src="images/Icons/iconFindCad.png" alt="Botão Achei" class="iconButtonCad">
+                        <span style="color: white;">Achei algo</span>
                     </button>
+
+                </div>
+                <div class="vectorsCadStart">
+                    <img src="images/Vectors/Pepita.png" alt="Imagem pepita" class="pepitaCadStart">
+                    <img src="images/Vectors/Xaxado.png" alt="Imagem Xaxado" class="xaxadoCadStart">
                 </div>
             </div>
         </div>
@@ -164,7 +168,7 @@
                         </div>
                         <div class="lostPlaceEspecific" style="width: 45%;">
                             <div class="adjustElements">
-                                <select name="lostPlaceEspecific" style="display: none;" class="especificGroundFloor">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificGroundFloorL">
                                     <option value="lostReception">Recepção</option>
                                     <option value="lostCorridor">Corredor</option>
                                     <option value="lostDrinking">Bebedouro</option>
@@ -173,20 +177,20 @@
                                     <option value="lostCreativity">Laboratório de Criatividade</option>
                                     <option value="lostBathroom">Banheiros</option>
                                 </select>
-                                <select name="lostPlaceEspecific" style="display: none;" class="especificFirstFloor">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificFirstFloorL">
                                     <option value="lostMezzanine">Mezanino</option>
                                     <option value="lostDrinkingFir">Bebedouro</option>
                                     <option value="lostBathroomFir">Banheiro</option>
                                     <option value="lostCorridorFir">Corredor</option>
                                     <option value="lostLabs">Laboratórios</option>
                                 </select>
-                                <select name="lostPlaceEspecific" style="display: none;" class="especificSecondFloor">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificSecondFloorL">
                                     <option value="lostMezzanineSec">Mezanino</option>
                                     <option value="lostDrinkingSec">Bebedouro</option>
                                     <option value="lostPantry">Copa</option>
                                     <option value="lostSupervisor">Coordenação</option>
                                 </select>
-                                <select name="lostPlaceEspecific" style="display: none;" class="especificExternalArea">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificExternalAreaL">
                                     <option value="lostFront">Frente do bloco</option>
                                     <option value="lostParking">Estacionamento</option>
                                     <option value="lostCanteen">Cantina</option>
@@ -377,44 +381,44 @@
     function changeVals() {
         var lostPlace = $("#lostPlaceGeral").val();
         if (lostPlace == 'lostGroundFloor') {
-            $(".especificGroundFloor").attr("style", "display:block;");
-            $(".especificFirstFloor").attr("style", "display:none");
-            $(".especificSecondFloor").attr("style", "display:none");
-            $(".especificExternalArea").attr("style", "display:none");
-            $(".especificGroundFloor").attr("id", "lostPlaceEspecific");
-            $(".especificFirstFloor").attr("id", "");
-            $(".especificSecondFloor").attr("id", "");
-            $(".especificExternalArea").attr("id", "");
+            $(".especificGroundFloorL").attr("style", "display:block;");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "");
         }
         else if (lostPlace == 'lostFirstFloor') {
-            $(".especificGroundFloor").attr("style", "display:none");
-            $(".especificFirstFloor").attr("style", "display:block;");
-            $(".especificSecondFloor").attr("style", "display:none");
-            $(".especificExternalArea").attr("style", "display:none");
-            $(".especificGroundFloor").attr("id", "");
-            $(".especificFirstFloor").attr("id", "lostPlaceEspecific");
-            $(".especificSecondFloor").attr("id", "");
-            $(".especificExternalArea").attr("id", "");
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:block;");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "");
         }
         else if (lostPlace == 'lostSecondFloor') {
-            $(".especificGroundFloor").attr("style", "display:none");
-            $(".especificFirstFloor").attr("style", "display:none");
-            $(".especificSecondFloor").attr("style", "display:block;");
-            $(".especificExternalArea").attr("style", "display:none");
-            $(".especificGroundFloor").attr("id", "");
-            $(".especificFirstFloor").attr("id", "");
-            $(".especificSecondFloor").attr("id", "lostPlaceEspecific");
-            $(".especificExternalArea").attr("id", "");
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:block;");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificExternalAreaL").attr("id", "");
         }
         else if (lostPlace == 'lostExtArea') {
-            $(".especificGroundFloor").attr("style", "display:none");
-            $(".especificFirstFloor").attr("style", "display:none");
-            $(".especificSecondFloor").attr("style", "display:none");
-            $(".especificExternalArea").attr("style", "display:block;");
-            $(".especificGroundFloor").attr("id", "");
-            $(".especificFirstFloor").attr("id", "");
-            $(".especificSecondFloor").attr("id", "");
-            $(".especificExternalArea").attr("id", "lostPlaceEspecific");
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:block;");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "lostPlaceEspecific");
         }
     }
     $("select").change(changeVals);
