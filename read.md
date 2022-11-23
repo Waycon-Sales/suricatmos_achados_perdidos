@@ -43,4 +43,4 @@
 
 # Mapeamento de funcionalidades
 
-![tabela de funcionalidades](front/views/images/tableread.jpeg)
+![tabela de funcionalidades](bin/front/views/images/tableread.jpeg)
