@@ -43,4 +43,4 @@
 
 # Mapeamento de funcionalidades
 
-![tabela de funcionalidades](front/views/images/tableread.jpeg)
+![tabela de funcionalidades](https://github.com/Waycon-Sales/suricatmos_achados_perdidos/blob/service/bin/front/views/Images/tableread.jpeg)
