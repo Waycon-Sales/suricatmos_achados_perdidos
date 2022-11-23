@@ -5,6 +5,8 @@
     --color-main2: #a8a8a8;
     --color-main3: #d9d9d9;
     --color-main4: #676767;
+    --color-mainY: #FEC456;
+    --color-mainB: #4A35AE;
 }
 
 
@@ -76,7 +78,7 @@ main{
     align-content: center;
 }
 
-#closeCadStart{
+.buttonReturn{
     border: none;
     background-color: transparent;
 }
@@ -89,17 +91,24 @@ main{
 
 .modalCadText h1{
     margin-bottom: -20px;
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: 950;
+    font-size: 30px;
     line-height: 47px;
-    color: var(--color-main1)
+    color: var(--color-main1);
 }
 
 .modalCadText p{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 34.1px;
     color: var(--color-main1);
+}
+
+.modalCadText p b{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 34.1px;
+    color: var(--color-mainY);
 }
 
 .modalCadTop{
@@ -113,6 +122,332 @@ main{
     
 }
 
+.lostTextTop h1{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: var(--color-main1);
+    margin-bottom: -5px;
+}
+
+.lostTextTop p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.userInfoCad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#lostCateg{
+    width: 70%;
+    outline: none;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    height: 40px;
+}
+
+#findCateg{
+    width: 70%;
+    outline: none;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    height: 40px;
+}
+
+.lostCategDropdown{
+    width: 70%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    gap:5px !important;
+}
+
+.lostPlaceGeral{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.lostPlaceEspecific{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.adjustElements{
+    margin-top: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent !important;
+    width: 80%;
+}
+
+.lostImageUpload{
+    width: 230px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: baseline !important;
+    margin-bottom: 150px !important;
+}
+
+.lostImgObject{
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+}
+
+.uploadImage{
+    width: 100px;
+    height: 100px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    border: 1px solid var(--color-main2);
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.imgUploadTitle{
+    margin-bottom: 60px !important;
+}
+
+.uploadedImage{
+    width: 100px;
+    height: 100px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    background-color: var(--color-main2) !important;
+    border: 1px solid var(--color-main2);
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.uploadedImageSrc{
+    width: 100%;
+    height: 100%;
+}
+
+.imgIcon{
+    margin-top: 12px;
+}
+
+.lostPlaceDouble{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+#lostTextarea{
+    box-sizing: border-box;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 95%;
+    height: 95%;
+    resize: none;
+}
+
+#findTextarea{
+    box-sizing: border-box;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 95%;
+    height: 95%;
+    resize: none;
+}
+
+.especificGroundFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificFirstFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificSecondFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificExternalArea{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificGroundFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificFirstFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificSecondFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificExternalAreaL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+#lostPlaceGeral{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+#findPlaceGeral{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.lostDescription{
+    height: 100px !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid var(--color-main2);
+}
+
+.userInfoCad div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+    border-radius: 50px;
+    background-color: var(--color-main3);
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.userInfoCad label{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-main1);
+    margin-bottom: 15px;
+}
+
+.submitCancelButtons{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: transparent !important;
+}
+
+.resetButton{
+    width: 45%;
+    border-radius: 40px !important;
+    height: 45px !important;
+    border: 1px solid var(--color-main1) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-main1);
+}
+
+.submitButton{
+    width: 45%;
+    border-radius: 40px !important;
+    height: 45px !important;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-main1);
+}
+
+.userInfoCad div input{
+    background-color: var(--color-main3);
+    border: 0;
+    width: 85%;
+    height: 26px;
+    outline: none;
+}
+
 #btnOpenCadStart{
     border: 0;
     background-color: transparent;
@@ -121,7 +456,7 @@ main{
 }
 
 .modalCadStart{
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -129,6 +464,30 @@ main{
     height: 100%;
     overflow: auto;
     z-index: 1000;
+    background-color: white;
+}
+
+.modalCadLost{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2000;
+    background-color: white;
+}
+
+.modalCadFind{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2000;
     background-color: white;
 }
 
@@ -146,16 +505,48 @@ main{
     justify-content: space-between;
 }
 
+.buttonCloseCad{
+    margin-bottom: -55px;
+}
+
 .buttonCad{
-    background-color: var(--color-main3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     width: 160px;
     height: 87px;
-    border: 0;
+    border: 1px solid var(--color-main1);
     border-radius: 10px;
+}
+
+.buttonCad span{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.vectorsCadStart{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: fixed !important;
+    bottom: 0;
+}
+
+.pepitaCadStart{
+    position: fixed;
+    left: 5%;
+    bottom: 0%;
+}
+
+.xaxadoCadStart{
+    position: fixed;
+    right: 5%;
+    bottom: 0%;
 }
 
 .adminLogin a{

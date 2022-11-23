@@ -26,7 +26,6 @@ const mailDetails = {
 };
 
 
-
 const controller = {
    
     async bemVinde(request , response){
@@ -35,6 +34,7 @@ const controller = {
 
     async inserirObjeto(req,res){
         console.log(req.body);
+
         if(req.body != {}){
             const object = new ObjectModel(JSON.parse(req.body.text));
             if(object.titulo != null && object.titulo != "" &&
@@ -53,6 +53,7 @@ const controller = {
                         }
                         object.codObjeto = object.categoria+"#";
                         object.status = "ativo";
+
                         let idObject = await objectController.insertObject(object);
                         object.id = idObject.id
                         object.codObjeto = object.codObjeto +  object.id;
@@ -64,6 +65,7 @@ const controller = {
                             "message": "Sucesso, objeto Cadastrado!",
                             "codObjeto": codObjectRegistrado.codObjeto,
                             "id":object.id
+
                         });
                     }catch(e){
                         console.log(e.message);
@@ -551,8 +553,6 @@ const controller = {
             });
         }
     },
-
-
 }
 
 export default controller;

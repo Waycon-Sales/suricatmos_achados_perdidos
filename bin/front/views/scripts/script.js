@@ -98,22 +98,4 @@ function registerObject(){
         alert("O tipo de arquivo não é aceito, por favor insira uma imagem png ou jpg/jpeg");
     }
 
-    
-    /*let formData = new FormData(); 
-    formData.append("imagemObject", imagemObject.files[0]);
-    formData.append("text", text);
-    
-    console.log(formData);
-    /*$.ajax({
-        url : url+"/insertObject",
-        type : 'post',
-        data : formData,
-    })
-    .done(function(msg){
-       console.log(msg);
-    })
-    .fail(function(jqXHR, textStatus, msg){
-        alert(msg);
-    });*/
-
 }
