@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../Flickity/flickity.css" media="screen">
+
+    <title>Sistemas e Mídias Digitais - Achados e Perdidos</title>
+</head>
+
+<body>
+    <script src="scripts/script.js"></script>
+    <script src="../Flickity/flickity.pkgd.min.js"></script>
+    <script src="scripts/jquery-3.6.1.min.js"></script>
+
+    <nav class="navbar">
+        <div class="buttonNav">
+            <a id="linkNav1" class="active">
+                <img src="Images/Icons/iconHomeActive.png" class="iconNav" alt="Início">
+                <span class="navText">Início</span>
+            </a>
+        </div>
+        <div class="buttonNavPlus">
+            <button id="btnOpenCadStart">
+                <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
+            </button>
+        </div>
+        <div class="buttonNav">
+            <a id="linkNav2">
+                <img src="images/icons/iconCategoriesInactive.png" class="iconNav" alt="Categorias">
+                <span class="navText">Categorias</span>
+            </a>
+        </div>
+    </nav>
+    <main class="mainContent">
+        <div class="topContent">
+            <div class="topContentText">
+                <p class="topTextLine">Perdeu ou achou algo?</p>
+                <P>Nós te ajudamos!</p>
+            </div>
+        </div>
+        <div class="bannerContent">
+            <img src="bannerImage.png" class="bannerImage" alt="ImagemBanner">
+        </div>
+        <div class="searchBar">
+            <img src="images/Icons/iconSearch.png" class="searchImage" alt="LupaPesquisa">
+            <input type="text" id="searchContent" name="searchContent" placeholder="Buscar por título, tipo ou código">
+        </div>
+        <div class="categoriesScroll">
+            <p>Categorias</p>
+            <div class="gallery js-flickity" data-flickity-options='{"freeScroll":true,"wrapAround":true}'>
+                <div class="gallery-cell">
+                    <a>
+                        <img src="images/Icons/iconBottle.png" class="iconCard" alt="Água Icone">
+                        <span>Garrafas de</span>
+                        <span>água</span>
+                    </a>
+                </div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+            </div>
+            <div class="foundRecently">
+                <div class="topFoundText">
+                    <span>Achados recentemente</span>
+                    <a>Ver todos</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL CADASTRO DE OBJETO -->
+
+    <div class="modalCadStart" id="modalCadStart">
+        <div class="modalCadTop">
+            <div class="buttonCloseCad">
+                <button id="closeCadStart" class="buttonReturn">
+                    <img src="images/Icons/iconReturn.png" alt="Botão Retorno" class="returnIcon">
+                </button>
+            </div>
+            <div class="contentButtonsCad">
+                <div class="modalCadText">
+                    <h1>Olá, bem vindo(a)!</h1>
+                    <p>Você <b style="color: #DDBA30;">perdeu</b> ou <b style="color:#4A35AE;">achou</b> algo?</p>
+                </div>
+                <div class="buttonsCadStart">
+                    <button class="buttonCad" style="background-color: var(--color-mainY);" id="buttonLostCad">
+                        <img src="images/Icons/iconLost.png" alt="Botão Perdi" class="iconButtonCad">
+                        <span>Perdi algo</span>
+                    </button>
+                    <button class="buttonCad" style="background-color: var(--color-mainB);" id="buttonFindCad">
+                        <img src="images/Icons/iconFindCad.png" alt="Botão Achei" class="iconButtonCad">
+                        <span style="color: white;">Achei algo</span>
+                    </button>
+
+                </div>
+                <div class="vectorsCadStart">
+                    <img src="images/Vectors/Pepita.png" alt="Imagem pepita" class="pepitaCadStart">
+                    <img src="images/Vectors/Xaxado.png" alt="Imagem Xaxado" class="xaxadoCadStart">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CADASTRO DE OBJETO PERDIDO -->
+
+    <div class="modalCadLost" id="modalCadLost">
+        <div class="modalCadTop" style="gap: 30px;">
+            <div class="buttonCoseCad">
+                <button class="buttonReturn" id="returnCadStart">
+                    <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
+                </button>
+            </div>
+            <div class="lostTextTop">
+                <h1>Cadastro de <b>objeto perdido</b></h1>
+                <p>Preencha as informações. Quanto <b>mais detalhes</b> sua postagem tiver, <b>mais fácil</b> de alguém
+                    encontrar seu objeto!</p>
+            </div>
+            <form>
+                <div class="userInfoCad">
+
+                    <label for="lostName">Nome</label>
+                    <div>
+                        <input type="text" name="lostName" placeholder="Fulano da Silva" id="lostName">
+                    </div>
+                    <label for="lostEmail">E-mail para notificação</label>
+                    <div>
+                        <input type="text" placeholder="email@email.com" name="lostEmail" id="lostEmail">
+                    </div>
+                    <label for="lostTitle">Título da postagem</label>
+                    <div>
+                        <input type="text" placeholder="Celular perdido" name="lostTitle" id="lostTitle">
+                    </div>
+                    <label for="lostCateg">Categoria</label>
+                    <div class="lostCategDropdown">
+                        <select name="lostCateg" id="lostCateg" required>
+                            <option value="lostCellphone">Celulares</option>
+                            <option value="lostDocuments">Documentos</option>
+                            <option value="lostSqueezer">Garrafas de água</option>
+                            <option value="lostStationery">Papelaria</option>
+                            <option value="lostAcessory">Acessórios</option>
+                            <option value="lostUmbrella">Guarda-chuvas</option>
+                            <option value="lostOther">Outros</option>
+                        </select>
+                        <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                    </div>
+                    <label for="lostTextarea">Descrição</label>
+                    <div class="lostDescription">
+                        <textarea name="lostTextarea"
+                            placeholder="Com a descrição será mais fácil que você encontre seu objeto" id="lostTextarea"
+                            cols="41" rows="5"></textarea>
+                    </div>
+                    <label style="margin-bottom: 30px;" for="lostPlaceGeral">Possível local em que perdeu</label>
+                    <div class="lostPlaceDouble">
+                        <div class="lostPlaceGeral" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="lostPlaceGeral" id="lostPlaceGeral">
+                                    <option value="lostGroundFloor">Térreo</option>
+                                    <option value="lostFirstFloor">Primeiro Andar</option>
+                                    <option value="lostSecondFloor">Segundo Andar</option>
+                                    <option value="lostExtArea">Área Externa</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                        <div class="lostPlaceEspecific" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificGroundFloorL">
+                                    <option value="lostReception">Recepção</option>
+                                    <option value="lostCorridor">Corredor</option>
+                                    <option value="lostDrinking">Bebedouro</option>
+                                    <option value="lostRooms">Salas</option>
+                                    <option value="lostAcademic">Centro acadêmico</option>
+                                    <option value="lostCreativity">Laboratório de Criatividade</option>
+                                    <option value="lostBathroom">Banheiros</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificFirstFloorL">
+                                    <option value="lostMezzanine">Mezanino</option>
+                                    <option value="lostDrinkingFir">Bebedouro</option>
+                                    <option value="lostBathroomFir">Banheiro</option>
+                                    <option value="lostCorridorFir">Corredor</option>
+                                    <option value="lostLabs">Laboratórios</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificSecondFloorL">
+                                    <option value="lostMezzanineSec">Mezanino</option>
+                                    <option value="lostDrinkingSec">Bebedouro</option>
+                                    <option value="lostPantry">Copa</option>
+                                    <option value="lostSupervisor">Coordenação</option>
+                                </select>
+                                <select name="lostPlaceEspecific" style="display: none;" class="especificExternalAreaL">
+                                    <option value="lostFront">Frente do bloco</option>
+                                    <option value="lostParking">Estacionamento</option>
+                                    <option value="lostCanteen">Cantina</option>
+                                    <option value="lostRoad">Estrada</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lostImageUpload" style="background-color: transparent;">
+                        <label class="imgUploadTitle" for="lostImgObject">Imagens</label>
+                        <div class="lostImgObject" style="background-color: transparent;">
+                            <div class="uploadImage">
+                                <input type="file" name="lostImgObject" style="display: none;" id="lostImgObject"
+                                    accept="image/jpeg, image/png">
+                                <label class="imgIcon" for="lostImgObject"><img src="images/Icons/iconAddImg.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="uploadedImage">
+                                <img src="" alt="Imagem Upada" class="uplodadeImageSrc">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitCancelButtons">
+                        <div class="resetButton">
+                            <button type="button" id="lostObjectReset" style="background-color: transparent;">Resetar</button>
+                        </div>
+                        <div class="falseSubmitButton">
+                            <button type="button" id="lostObjectSubmit">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- MODAL CADASTRO DE OBJETO ACHADO -->
+
+    <div class="modalCadFind" id="modalCadFind">
+        <div class="modalCadTop" style="gap: 30px;">
+            <div class="buttonCoseCad">
+                <button class="buttonReturn" id="returnCadFind">
+                    <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
+                </button>
+            </div>
+            <div class="findTextTop">
+                <h1>Cadastro de <b>objeto achado</b></h1>
+                <p>Preencha as informações. Quanto <b>mais detalhes</b> sua postagem tiver, <b>mais fácil</b> será de o
+                    dono encontrar o objeto!
+                </p>
+            </div>
+            <form>
+                <div class="userInfoCad">
+
+                    <div class="radioButton" style="border: 0;">
+                        <div>
+                            <label>Posse do objeto</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="findObj" id="coordObj" value="coordObj" onclick="getRadioVal()" required>
+                            <label id="coordObjText" for="coordOjb">Entregar para a Coordenação</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="findObj" id="selfOjb" value="selfObj" onclick="getRadioVal()">
+                            <label id="selfObjText" for="selfObj">Ficar com o objeto para devolver ao dono</label>
+                        </div>
+                    </div>
+                    <label id="findNameLabel" for="findName">Seu nome</label>
+                    <div class="findName" style="display: none;">
+                        <input type="text" name="findName" placeholder="Maria Soares" id="findName">
+                    </div>
+                    <label id="findMailLabel" for="findMail">E-mail para notificação</label>
+                    <div class="findMail" style="display: none;">
+                        <input type="text" name="findMail" placeholder="email@email.com" id="findMail">
+                    </div>
+                    <label for="lostTitle">Título da postagem</label>
+                    <div>
+                        <input type="text" placeholder="Celular perdido" name="lostTitle" id="findTitle">
+                    </div>
+                    <label style="margin-bottom: 30px;" for="lostPlaceGeral">Local encontrado</label>
+                    <div class="lostPlaceDouble">
+                        <div class="lostPlaceGeral" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="findPlaceGeral" id="findPlaceGeral">
+                                    <option value="findGroundFloor">Térreo</option>
+                                    <option value="findFirstFloor">Primeiro Andar</option>
+                                    <option value="findSecondFloor">Segundo Andar</option>
+                                    <option value="findExtArea">Área Externa</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                        <div class="lostPlaceEspecific" style="width: 45%;">
+                            <div class="adjustElements">
+                                <select name="findPlaceEspecific" style="display: none;" class="especificGroundFloor">
+                                    <option value="findReception">Recepção</option>
+                                    <option value="findCorridor">Corredor</option>
+                                    <option value="findDrinking">Bebedouro</option>
+                                    <option value="findRooms">Salas</option>
+                                    <option value="findAcademic">Centro acadêmico</option>
+                                    <option value="findCreativity">Laboratório de Criatividade</option>
+                                    <option value="findBathroom">Banheiros</option>
+                                </select>
+                                <select name="findPlaceEspecific" style="display: none;" class="especificFirstFloor">
+                                    <option value="findMezzanine">Mezanino</option>
+                                    <option value="findDrinkingFir">Bebedouro</option>
+                                    <option value="findBathroomFir">Banheiro</option>
+                                    <option value="findCorridorFir">Corredor</option>
+                                    <option value="findLabs">Laboratórios</option>
+                                </select>
+                                <select name="findPlaceEspecific" style="display: none;" class="especificSecondFloor">
+                                    <option value="findMezzanineSec">Mezanino</option>
+                                    <option value="findDrinkingSec">Bebedouro</option>
+                                    <option value="findPantry">Copa</option>
+                                    <option value="findSupervisor">Coordenação</option>
+                                </select>
+                                <select name="findPlaceEspecific" style="display: none;" class="especificExternalArea">
+                                    <option value="findFront">Frente do bloco</option>
+                                    <option value="findParking">Estacionamento</option>
+                                    <option value="findCanteen">Cantina</option>
+                                    <option value="findRoad">Estrada</option>
+                                </select>
+                                <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <label for="findCateg">Categoria</label>
+                    <div class="lostCategDropdown">
+                        <select name="lostCateg" id="findCateg" required>
+                            <option value="findCellphone">Celulares</option>
+                            <option value="findDocuments">Documentos</option>
+                            <option value="findSqueezer">Garrafas de água</option>
+                            <option value="findStationery">Papelaria</option>
+                            <option value="findAcessory">Acessórios</option>
+                            <option value="findUmbrella">Guarda-chuvas</option>
+                            <option value="findOther">Outros</option>
+                        </select>
+                        <img src="images/Icons/iconDropdown.png" alt="" class="iconDropdown">
+                    </div>
+                    <div class="lostImageUpload" style="background-color: transparent;">
+                        <label class="imgUploadTitle" for="findImgObject">Imagens</label>
+                        <div class="lostImgObject" style="background-color: transparent;">
+                            <div class="uploadImage">
+                                <input type="file" name="findImgObject" style="display: none;" id="findImgObject"
+                                    accept="image/jpeg, image/png">
+                                <label class="imgIcon" for="findImgObject"><img src="images/Icons/iconAddImg.png"
+                                        alt=""></label>
+                            </div>
+                            <div class="uploadedImage">
+                                <img src="" alt="Imagem Upada" class="uplodadeImageSrc">
+                            </div>
+                        </div>
+                    </div>
+                    <label for="findTextarea">Descrição</label>
+                    <div class="lostDescription">
+                        <textarea name="lostTextarea"
+                            placeholder="Com a descrição será mais fácil de o dono encontrar seu objeto."
+                            id="findTextarea" cols="41" rows="5"></textarea>
+                    </div>
+                    <div class="submitCancelButtons">
+                        <div class="resetButton">
+                            <button type="button" id="findObjectReset"
+                                style="background-color: transparent;">Resetar</button>
+                        </div>
+                        <div class="falseSubmitButton">
+                            <button type="button" id="findObjectSubmit">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- MODAL VISUALIZAÇÃO ACHADO CADASTRADO -->
+
+                <div class="modalCadFind" id="modalViewFind">
+                    <div class="modalCadTop" style="gap: 30px;">
+                        <div class="buttonCoseCad">
+                            <button type="button" class="buttonReturn" id="returnViewFind">
+                                <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
+                            </button>
+                        </div>
+                        <div class="findTextTop">
+                            <h1>Cadastro de <b>objeto achado</b></h1>
+                            <p>Confirme se todos as informações estão corretas. Após a confirmação não será possível
+                                fazer mudanças.
+                            </p>
+                        </div>
+                        <div class="userInfoCad">
+                            <div class="selectedOptionFind" style="border: 0;">
+                                <img style="height: 20px; width:20px;" src="images/Vectors/checkboxIcon.png"
+                                    alt="Imagem Checkbox">
+                                <label id="textCheckbox"></label>
+                            </div>
+                            <label for="yourNameFind" id="yourNameLabel">Seu nome</label>
+                            <div class="findName" style="display: none;">
+                                <input type="text" placeholder="Maria Soares" name="yourNameFind" id="yourNameFind">
+                            </div>
+                            <label for="yourMailFind" id="yourMailLabel">Seu e-mail</label>
+                            <div class="findMail" style="display: none;">
+                                <input type="email" placeholder="email@email.com" name="yourMailFind" id="yourMailFind">
+                            </div>
+                            <h2>Pré Visualização</h1>
+                            <div class="viewFindImage">
+                                <div>
+                                    <img src="" alt="Imagem objeto Achado">
+                                </div>
+                            </div>
+                            <h2 id="textTitleFind">Teste</h2>
+                            <div class="cardFindObj">
+                                <label>Objeto achado</label>
+                            </div>
+                            <div class="reviewFindInfo">
+                                <div class="categorieReview">
+                                    <img src="images/Icons/categorieReviewIcon.png" alt="Categoria Cadastrada">
+                                    <span id="categorieReview"></span>
+                                </div>
+                                <div class="placeReview">
+                                    <img src="images/Icons/placeReviewIcon.png" alt="Local Achado">
+                                    <span id="placeReview"></span>
+                                    <span id="placeReviewEspecific"></span>
+                                </div>
+                                <div class="postRelevance">
+                                    <img src="images/Icons/relevanceIcon.png" alt="Relevância">
+                                    <span id="postRelevance"></span>
+                                    <span>Relevância</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+</html>
+
+<script>
+    $("#btnOpenCadStart").click(function () {
+        $("#modalCadStart").css("display", "block");
+    })
+
+    $("#closeCadStart").click(function () {
+        $("#modalCadStart").css("display", "none");
+    })
+
+    $("#buttonLostCad").click(function () {
+        $("#modalCadStart").css("display", "none");
+        $("#modalCadLost").css("display", "block");
+    })
+    $("#returnCadStart").click(function () {
+        $("#modalCadStart").css("display", "block");
+        $("#modalCadLost").css("display", "none");
+    })
+
+    $("#buttonFindCad").click(function () {
+        $("#modalCadStart").css("display", "none");
+        $("#modalCadFind").css("display", "block");
+    })
+    $("#returnCadFind").click(function () {
+        $("#modalCadStart").css("display", "block");
+        $("#modalCadFind").css("display", "none");
+    })
+
+    $("#findObjectSubmit").click(function () {
+        $("#modalViewFind").css("display", "block");
+    })
+
+    $("#returnViewFind").click(function () {
+        $("#modalViewFind").css("display", "none");
+    })
+
+
+    function changeCategLost() {
+        var lostCateg = $("#lostCateg").val();
+    }
+    $("select").change(changeCategLost);
+    changeCategLost();
+
+    function getRadioVal() {
+        if ($("#coordObj").is(":checked")) {
+            $("#textCheckbox").html($("#coordObjText").html());
+            $("#findMailLabel").attr("style", "display:none;");
+            $("#findNameLabel").attr("style", "display:none;");
+            $(".findName").attr("style", "display:none;");
+            $(".findMail").attr("style", "display:none;");
+            $("#yourMailLabel").attr("style", "display:none;");
+            $("#yourNameLabel").attr("style", "display:none;");
+            return
+        }
+        $("#textCheckbox").html($("#selfObjText").html());
+        $("#findMailLabel").attr("style", "display:flex;");
+        $("#findNameLabel").attr("style", "display:flex;");
+        $(".findName").attr("style", "display:flex;");
+        $(".findMail").attr("style", "display:flex;");
+        $("#yourMailLabel").attr("style", "display:flex;");
+        $("#yourNameLabel").attr("style", "display:flex;");
+    }
+
+    function changeVals() {
+        var lostPlace = $("#lostPlaceGeral").val();
+        if (lostPlace == 'lostGroundFloor') {
+            $(".especificGroundFloorL").attr("style", "display:block;");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "");
+        }
+        else if (lostPlace == 'lostFirstFloor') {
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:block;");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "");
+        }
+        else if (lostPlace == 'lostSecondFloor') {
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:block;");
+            $(".especificExternalAreaL").attr("style", "display:none");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "lostPlaceEspecific");
+            $(".especificExternalAreaL").attr("id", "");
+        }
+        else if (lostPlace == 'lostExtArea') {
+            $(".especificGroundFloorL").attr("style", "display:none");
+            $(".especificFirstFloorL").attr("style", "display:none");
+            $(".especificSecondFloorL").attr("style", "display:none");
+            $(".especificExternalAreaL").attr("style", "display:block;");
+            $(".especificGroundFloorL").attr("id", "");
+            $(".especificFirstFloorL").attr("id", "");
+            $(".especificSecondFloorL").attr("id", "");
+            $(".especificExternalAreaL").attr("id", "lostPlaceEspecific");
+        }
+    }
+    $("select").change(changeVals);
+    changeVals();
+
+    function changeCategFind() {
+        var findCateg = $("#findCateg").val();
+    }
+    $("select").change(changeCategFind);
+    changeCategFind();
+
+    function changeValsFind() {
+        var findPlace = $("#findPlaceGeral").val();
+        if (findPlace == 'findGroundFloor') {
+            $(".especificGroundFloor").attr("style", "display:block;");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "findPlaceEspecific");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (findPlace == 'findFirstFloor') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:block;");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "findPlaceEspecific");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (findPlace == 'findSecondFloor') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:block;");
+            $(".especificExternalArea").attr("style", "display:none");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "findPlaceEspecific");
+            $(".especificExternalArea").attr("id", "");
+        }
+        else if (findPlace == 'findExtArea') {
+            $(".especificGroundFloor").attr("style", "display:none");
+            $(".especificFirstFloor").attr("style", "display:none");
+            $(".especificSecondFloor").attr("style", "display:none");
+            $(".especificExternalArea").attr("style", "display:block;");
+            $(".especificGroundFloor").attr("id", "");
+            $(".especificFirstFloor").attr("id", "");
+            $(".especificSecondFloor").attr("id", "");
+            $(".especificExternalArea").attr("id", "findPlaceEspecific");
+        }
+    }
+    $("select").change(changeValsFind);
+    changeValsFind();
+
+
+
+
+</script>

@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+    --color-main1: #313131;
+    --color-main2: #a8a8a8;
+    --color-main3: #d9d9d9;
+    --color-main4: #676767;
+    --color-mainY: #FEC456;
+    --color-mainY2: #DDBA30;
+    --color-mainB: #4A35AE;
+    --color-mainB2: #5368ff;
+}
+
+
+
+body{
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    font-family: 'Nunito';
+    font-style: normal;
+}
+
+main{
+    margin-top: 50px;
+    margin-left: 4%;
+    margin-right: 4%;
+    align-items: center;
+}
+
+.bannerContent{
+    background-color: var(--color-main3);
+    width: 100%;
+    height: 98px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    gap: 10px;
+    border: 1px solid var(--color-main1);
+    border-radius: 10px;
+
+}
+
+.searchBar input{
+    width: 85%;
+    outline: none;
+    border-style: hidden;
+}
+
+.mainContent div{
+    margin-bottom: 35px;
+}
+
+.topContent{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 108.9%;
+    color: var(--color-main1);
+    width: max-content;
+    height: 54px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.buttonReturn{
+    border: none;
+    background-color: transparent;
+}
+
+.modalCadText{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.modalCadText h1{
+    margin-bottom: -20px;
+    font-weight: 950;
+    font-size: 30px;
+    line-height: 47px;
+    color: var(--color-main1);
+}
+
+.findName{
+    display: none;
+}
+
+#findNameLabel{
+    display: none;
+}
+
+.findMail{
+    display: none;
+}
+
+.viewFindImage{
+    border-radius: 20px !important;
+    background-color: var(--color-mainB2) !important;
+    height: 340px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;  
+}
+
+.viewFindImage div{
+    border-radius: 20px !important;
+    margin-bottom: 5px !important;
+    width: 95% !important;
+    height: 320px !important;
+    background-color: var(--color-mainB) !important;
+    border-radius: 20px;
+    margin-top: -6px !important;
+}
+
+.viewFindImage div img{
+    width: 95% !important;
+    border-radius: 20px !important;
+}
+
+#findMailLabel{
+    display: none;
+}
+
+.modalCadText p{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 34.1px;
+    color: var(--color-main1);
+}
+
+.modalCadText p b{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 34.1px;
+    color: var(--color-mainY);
+}
+
+.modalCadTop{
+    margin-top: 50px;
+    margin-left: 4%;
+    margin-right: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 216px;
+    
+}
+
+.cardFindObj{
+    background-color: var(--color-mainB) !important;
+    width: 65% !important;
+}
+
+.cardFindObj label{
+    color: white !important;
+    font-weight: 400 !important;
+    margin-top: 6px !important;
+}
+
+.selectedOptionFind{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+.selectedOptionFind img{
+    margin-right: 5px !important;
+}
+
+.selectedOptionFind label{
+    font-size: 15px !important;
+}
+
+.lostTextTop h1{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: var(--color-main1);
+    margin-bottom: -5px;
+}
+
+.lostTextTop p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.userInfoCad div{
+    font-family: 'Nunito' !important;
+}
+
+.findTextTop h1{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: var(--color-main1);
+    margin-bottom: -5px;
+}
+
+.radioButton{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: initial !important;
+    margin-bottom: 120px !important;
+}
+
+.radioButton div{
+    border: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: initial !important;
+    justify-content: flex-start !important;
+    margin-bottom: -90px !important;
+}
+
+.radioButton div input{
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 10px !important;
+}
+
+.radioButton div label{
+    font-size: 15px;
+    line-height: 15px;
+    margin-top: 6px !important;
+}
+
+
+
+.findTextTop h1 b{
+    color: var(--color-mainB);
+}
+
+.findTextTop p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.userInfoCad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#lostCateg{
+    width: 70%;
+    outline: none;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    height: 40px;
+}
+
+#findCateg{
+    width: 70%;
+    outline: none;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    height: 40px;
+}
+
+.lostCategDropdown{
+    width: 70%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    gap:5px !important;
+}
+
+.lostPlaceGeral{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.lostPlaceEspecific{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.adjustElements{
+    margin-top: 30px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    border: 0 !important;
+    background-color: transparent !important;
+    width: 80%;
+}
+
+.adjustElements img{
+    margin-top: -15px !important;    
+}
+
+.adjustElements select{
+    font-size: 15px;
+}
+
+.lostImageUpload{
+    width: 230px;
+    border: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: baseline !important;
+    margin-bottom: 150px !important;
+}
+
+.lostImgObject{
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border: 0 !important;
+
+}
+
+.uploadImage{
+    width: 100px;
+    height: 100px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    border: 1px solid var(--color-main2);
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.imgUploadTitle{
+    margin-bottom: 60px !important;
+}
+
+.uploadedImage{
+    width: 100px;
+    height: 100px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    background-color: var(--color-main2) !important;
+    border: 1px solid var(--color-main2);
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.uploadedImageSrc{
+    width: 100%;
+    height: 100%;
+}
+
+.imgIcon{
+    margin-top: 12px;
+}
+
+.lostPlaceDouble{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+#lostTextarea{
+    box-sizing: border-box;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 95%;
+    height: 95%;
+    resize: none;
+}
+
+#findTextarea{
+    box-sizing: border-box;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 95%;
+    height: 95%;
+    resize: none;
+}
+
+.especificGroundFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificFirstFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificSecondFloor{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificExternalArea{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificGroundFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificFirstFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificSecondFloorL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.especificExternalAreaL{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+#lostPlaceGeral{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+#findPlaceGeral{
+    width: 60%;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.lostDescription{
+    height: 100px !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid var(--color-main2);
+}
+
+.userInfoCad div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+    border-radius: 10px;
+    border: 1px solid var(--color-main1);
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    margin-bottom: 30px;
+}
+
+.userInfoCad label{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-main1);
+    margin-bottom: 15px;
+}
+
+.submitCancelButtons{
+    display: flex !important;
+    border: 0 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: transparent !important;
+}
+
+.lostTextTop h1 b{
+    color: var(--color-mainY2);
+}
+
+.resetButton{
+    width: 45%;
+    border-radius: 40px !important;
+    height: 45px !important;
+    border: 1px solid var(--color-main1) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-main1);
+}
+
+.falseSubmitButton{  
+    width: 45%;
+    border-radius: 40px !important;
+    height: 45px !important;
+    font-weight: 500;
+    background-color: var(--color-main1) !important;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-main1);
+}
+
+.falseSubmitButton button{  
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 8px !important;
+
+}
+
+.resetButton button{  
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-main1);
+    margin-bottom: 8px !important;
+
+}
+
+.userInfoCad div input{
+    background-color: transparent;
+    border: 0;
+    width: 90%;
+    height: 40px;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-family: 'Nunito';
+}
+
+.userInfoCad div select{
+    font-family: 'Nunito';
+    padding-bottom: 10px;
+}
+
+.userInfoCad div textarea{
+    font-family: 'Nunito';
+}
+
+.userInfoCad div input::placeholder{
+    color: var(--color-main2);
+}
+
+#btnOpenCadStart{
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.modalCadStart{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 1000;
+    background-color: white;
+}
+
+.modalCadLost{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2000;
+    background-color: white;
+}
+
+.modalCadFind{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2000;
+    background-color: white;
+}
+
+.categoriesScroll p{
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 27px;
+    color: var(--color-main1);
+}
+
+.buttonsCadStart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonCloseCad{
+    margin-bottom: -55px;
+}
+
+.buttonCad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 160px;
+    height: 87px;
+    border: 1px solid var(--color-main1);
+    border-radius: 10px;
+}
+
+.buttonCad span{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.vectorsCadStart{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: fixed !important;
+    bottom: 0;
+}
+
+.pepitaCadStart{
+    position: fixed;
+    left: 5%;
+    bottom: 0%;
+}
+
+.xaxadoCadStart{
+    position: fixed;
+    right: 5%;
+    bottom: 0%;
+}
+
+.adminLogin a{
+    font-size: 15px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.adminLogin{
+    margin-top: 50px;
+}
+
+.topContentText p{
+    margin-bottom: -30px;
+}
+
+.navbar{
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0px -1px 8px #999;
+    height: 100px;
+    font-size: 14px;
+    line-height: 97%;
+}
+
+a.active span.navText{
+    font-weight: 700;
+    color: var(--color-main1);
+}
+
+
+.buttonNav a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 0px 2% 0px 2%;
+    color: var(--color-main2);
+    font-weight: 400;
+    padding: 42px;
+    width: 34px;
+    height: 49px;
+    gap: 5px;
+}
+
+.topFoundText{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topFoundText span{
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 27px;
+   color: var(--color-main1);
+}
+
+.topFoundText a{
+    text-decoration: underline;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-main4);
+}
+
+.iconNav{
+    width: 30px;
+    height: 30px;
+}
+
+.buttonNavPlus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 2% 0 2%;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    background-color: var(--color-main1);
+}
