@@ -117,23 +117,24 @@
                 </button>
             </div>
             <div class="lostTextTop">
-                <h1>Cadastro de objeto perdido</h1>
-                <p>Texto de explicação</p>
+                <h1>Cadastro de <b>objeto perdido</b></h1>
+                <p>Preencha as informações. Quanto <b>mais detalhes</b> sua postagem tiver, <b>mais fácil</b> de alguém
+                    encontrar seu objeto!</p>
             </div>
             <form>
                 <div class="userInfoCad">
 
                     <label for="lostName">Nome</label>
                     <div>
-                        <input type="text" name="lostName" id="lostName">
+                        <input type="text" name="lostName" placeholder="Fulano da Silva" id="lostName">
                     </div>
                     <label for="lostEmail">E-mail para notificação</label>
                     <div>
-                        <input type="text" name="lostEmail" id="lostEmail">
+                        <input type="text" placeholder="email@email.com" name="lostEmail" id="lostEmail">
                     </div>
                     <label for="lostTitle">Título da postagem</label>
                     <div>
-                        <input type="text" name="lostTitle" id="lostTitle">
+                        <input type="text" placeholder="Celular perdido" name="lostTitle" id="lostTitle">
                     </div>
                     <label for="lostCateg">Categoria</label>
                     <div class="lostCategDropdown">
@@ -150,7 +151,9 @@
                     </div>
                     <label for="lostTextarea">Descrição</label>
                     <div class="lostDescription">
-                        <textarea name="lostTextarea" id="lostTextarea" cols="41" rows="5"></textarea>
+                        <textarea name="lostTextarea"
+                            placeholder="Com a descrição será mais fácil que você encontre seu objeto" id="lostTextarea"
+                            cols="41" rows="5"></textarea>
                     </div>
                     <label style="margin-bottom: 30px;" for="lostPlaceGeral">Possível local em que perdeu</label>
                     <div class="lostPlaceDouble">
@@ -215,10 +218,10 @@
                     </div>
                     <div class="submitCancelButtons">
                         <div class="resetButton">
-                            <input type="reset" id="lostObjectReset" style="background-color: transparent;">
+                            <button type="button" id="lostObjectReset" style="background-color: transparent;">Resetar</button>
                         </div>
-                        <div class="submitButton">
-                            <input type="submit" id="lostObjectSubmit">
+                        <div class="falseSubmitButton">
+                            <button type="button" id="lostObjectSubmit">Confirmar</button>
                         </div>
                     </div>
                 </div>
@@ -236,15 +239,39 @@
                     <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
                 </button>
             </div>
-            <div class="lostTextTop">
-                <h1>Cadastro de objeto achado</h1>
-                <p>Texto de explicação</p>
+            <div class="findTextTop">
+                <h1>Cadastro de <b>objeto achado</b></h1>
+                <p>Preencha as informações. Quanto <b>mais detalhes</b> sua postagem tiver, <b>mais fácil</b> será de o
+                    dono encontrar o objeto!
+                </p>
             </div>
             <form>
                 <div class="userInfoCad">
+
+                    <div class="radioButton" style="border: 0;">
+                        <div>
+                            <label>Posse do objeto</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="findObj" id="coordObj" value="coordObj" onclick="getRadioVal()" required>
+                            <label id="coordObjText" for="coordOjb">Entregar para a Coordenação</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="findObj" id="selfOjb" value="selfObj" onclick="getRadioVal()">
+                            <label id="selfObjText" for="selfObj">Ficar com o objeto para devolver ao dono</label>
+                        </div>
+                    </div>
+                    <label id="findNameLabel" for="findName">Seu nome</label>
+                    <div class="findName" style="display: none;">
+                        <input type="text" name="findName" placeholder="Maria Soares" id="findName">
+                    </div>
+                    <label id="findMailLabel" for="findMail">E-mail para notificação</label>
+                    <div class="findMail" style="display: none;">
+                        <input type="text" name="findMail" placeholder="email@email.com" id="findMail">
+                    </div>
                     <label for="lostTitle">Título da postagem</label>
                     <div>
-                        <input type="text" name="lostTitle" id="findTitle">
+                        <input type="text" placeholder="Celular perdido" name="lostTitle" id="findTitle">
                     </div>
                     <label style="margin-bottom: 30px;" for="lostPlaceGeral">Local encontrado</label>
                     <div class="lostPlaceDouble">
@@ -322,21 +349,85 @@
                     </div>
                     <label for="findTextarea">Descrição</label>
                     <div class="lostDescription">
-                        <textarea name="lostTextarea" id="findTextarea" cols="41" rows="5"></textarea>
+                        <textarea name="lostTextarea"
+                            placeholder="Com a descrição será mais fácil de o dono encontrar seu objeto."
+                            id="findTextarea" cols="41" rows="5"></textarea>
                     </div>
                     <div class="submitCancelButtons">
                         <div class="resetButton">
-                            <input type="reset" id="findObjectReset" style="background-color: transparent;">
+                            <button type="button" id="findObjectReset"
+                                style="background-color: transparent;">Resetar</button>
                         </div>
-                        <div class="submitButton">
-                            <input type="submit" id="findObjectSubmit">
+                        <div class="falseSubmitButton">
+                            <button type="button" id="findObjectSubmit">Confirmar</button>
                         </div>
                     </div>
+                </div>
+                <!-- MODAL VISUALIZAÇÃO ACHADO CADASTRADO -->
+
+                <div class="modalCadFind" id="modalViewFind">
+                    <div class="modalCadTop" style="gap: 30px;">
+                        <div class="buttonCoseCad">
+                            <button type="button" class="buttonReturn" id="returnViewFind">
+                                <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
+                            </button>
+                        </div>
+                        <div class="findTextTop">
+                            <h1>Cadastro de <b>objeto achado</b></h1>
+                            <p>Confirme se todos as informações estão corretas. Após a confirmação não será possível
+                                fazer mudanças.
+                            </p>
+                        </div>
+                        <div class="userInfoCad">
+                            <div class="selectedOptionFind" style="border: 0;">
+                                <img style="height: 20px; width:20px;" src="images/Vectors/checkboxIcon.png"
+                                    alt="Imagem Checkbox">
+                                <label id="textCheckbox"></label>
+                            </div>
+                            <label for="yourNameFind" id="yourNameLabel">Seu nome</label>
+                            <div class="findName" style="display: none;">
+                                <input type="text" placeholder="Maria Soares" name="yourNameFind" id="yourNameFind">
+                            </div>
+                            <label for="yourMailFind" id="yourMailLabel">Seu e-mail</label>
+                            <div class="findMail" style="display: none;">
+                                <input type="email" placeholder="email@email.com" name="yourMailFind" id="yourMailFind">
+                            </div>
+                            <h2>Pré Visualização</h1>
+                            <div class="viewFindImage">
+                                <div>
+                                    <img src="" alt="Imagem objeto Achado">
+                                </div>
+                            </div>
+                            <h2 id="textTitleFind">Teste</h2>
+                            <div class="cardFindObj">
+                                <label>Objeto achado</label>
+                            </div>
+                            <div class="reviewFindInfo">
+                                <div class="categorieReview">
+                                    <img src="images/Icons/categorieReviewIcon.png" alt="Categoria Cadastrada">
+                                    <span id="categorieReview"></span>
+                                </div>
+                                <div class="placeReview">
+                                    <img src="images/Icons/placeReviewIcon.png" alt="Local Achado">
+                                    <span id="placeReview"></span>
+                                    <span id="placeReviewEspecific"></span>
+                                </div>
+                                <div class="postRelevance">
+                                    <img src="images/Icons/relevanceIcon.png" alt="Relevância">
+                                    <span id="postRelevance"></span>
+                                    <span>Relevância</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </form>
         </div>
     </div>
-    </div>
+
+
+
 
 </body>
 
@@ -371,11 +462,40 @@
         $("#modalCadFind").css("display", "none");
     })
 
+    $("#findObjectSubmit").click(function () {
+        $("#modalViewFind").css("display", "block");
+    })
+
+    $("#returnViewFind").click(function () {
+        $("#modalViewFind").css("display", "none");
+    })
+
+
     function changeCategLost() {
         var lostCateg = $("#lostCateg").val();
     }
     $("select").change(changeCategLost);
     changeCategLost();
+
+    function getRadioVal() {
+        if ($("#coordObj").is(":checked")) {
+            $("#textCheckbox").html($("#coordObjText").html());
+            $("#findMailLabel").attr("style", "display:none;");
+            $("#findNameLabel").attr("style", "display:none;");
+            $(".findName").attr("style", "display:none;");
+            $(".findMail").attr("style", "display:none;");
+            $("#yourMailLabel").attr("style", "display:none;");
+            $("#yourNameLabel").attr("style", "display:none;");
+            return
+        }
+        $("#textCheckbox").html($("#selfObjText").html());
+        $("#findMailLabel").attr("style", "display:flex;");
+        $("#findNameLabel").attr("style", "display:flex;");
+        $(".findName").attr("style", "display:flex;");
+        $(".findMail").attr("style", "display:flex;");
+        $("#yourMailLabel").attr("style", "display:flex;");
+        $("#yourNameLabel").attr("style", "display:flex;");
+    }
 
     function changeVals() {
         var lostPlace = $("#lostPlaceGeral").val();
