@@ -38,7 +38,6 @@ const controller = {
         if(req.body != {}){
             const object = new ObjectModel(JSON.parse(req.body.text));
             if(object.titulo != null && object.titulo != "" &&
-                object.local != null && object.local!= "" &&
                 object.categoria != null && object.categoria != "" &&
                 object.tipo != null && object.tipo != ""  ){
 
@@ -56,6 +55,9 @@ const controller = {
                         }
                         if(object.nome == null || object.nome == undefined){
                             object.nome = "";
+                        }
+                        if(object.local == null || object.local == undefined){
+                            object.local = "";
                         }
                         object.codObjeto = object.categoria+"#";
                         object.status = "ativo";
@@ -120,7 +122,6 @@ const controller = {
             const object = new ObjectModel(req.body);
             if(object.id != null && object.id != "" &&
                 object.titulo != null && object.titulo != "" &&
-                object.local != null && object.local!= "" &&
                 object.categoria != null && object.categoria != "" &&
                 object.tipo != null && object.tipo != "" &&
                 object.status != null && object.status != ""){
@@ -134,6 +135,9 @@ const controller = {
                         }
                         if(object.nome == null || object.nome == undefined){
                             object.nome = "";
+                        }
+                        if(object.local == null || object.local == undefined){
+                            object.local = "";
                         }
     
                         let codObjectUpdate = await objectController.updateObject(object);
