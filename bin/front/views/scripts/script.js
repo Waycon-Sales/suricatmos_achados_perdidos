@@ -72,30 +72,51 @@ function registerObject(){
         }
     
     console.log(text);
-    console.log(imagemObject)
-    console.log(imagemObject[0].files[0].type);
-
-    if(imagemObject[0].files[0].type == "image/png" || imagemObject[0].files[0].type == "image/jpeg" || imagemObject[0].files[0].type == "image/jpg" ){
+    console.log(imagemObject[0].files.length);
+    //console.log(imagemObject[0].files[0].type);
+    if(imagemObject[0].files.length == 0){
         let formData = new FormData(); 
-        formData.append("imagemObject", imagemObject[0].files[0]);
-        formData.append("text", JSON.stringify(text));
-        console.log(formData);
-        $.ajax({
-            url : url+"/insertObject",
-            type : 'post',
-            data : formData,
-            processData: false,
-            contentType: false
-        })
-        .done(function(msg){
-           console.log(msg);
-        })
-        .fail(function(jqXHR, textStatus, msg){
-            alert(msg);
-        });
-
+            formData.append("imagemObject", imagemObject[0].files[0]);
+            formData.append("text", JSON.stringify(text));
+            console.log(formData);
+            $.ajax({
+                url : url+"/insertObject",
+                type : 'post',
+                data : formData,
+                processData: false,
+                contentType: false
+            })
+            .done(function(msg){
+                console.log(msg);
+               alert(msg.message);
+            })
+            .fail(function(jqXHR, textStatus, msg){
+                alert("Ocorreu um erro ao registrar objeto, tente novamente mais tarde!");
+            });
     }else{
-        alert("O tipo de arquivo não é aceito, por favor insira uma imagem png ou jpg/jpeg");
+        if(imagemObject[0].files[0].type == "image/png" || imagemObject[0].files[0].type == "image/jpeg" || imagemObject[0].files[0].type == "image/jpg" ){
+            let formData = new FormData(); 
+            formData.append("imagemObject", imagemObject[0].files[0]);
+            formData.append("text", JSON.stringify(text));
+            console.log(formData);
+            $.ajax({
+                url : url+"/insertObject",
+                type : 'post',
+                data : formData,
+                processData: false,
+                contentType: false
+            })
+            .done(function(msg){
+               console.log(msg);
+            })
+            .fail(function(jqXHR, textStatus, msg){
+                alert(msg);
+            });
+    
+        }else{
+            alert("O tipo de arquivo não é aceito, por favor insira uma imagem png ou jpg/jpeg");
+        }
     }
+    
 
 }

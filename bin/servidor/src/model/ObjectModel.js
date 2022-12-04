@@ -1,6 +1,8 @@
 export default class ObjectModel{
     constructor(object){
         this.id = object.id;
+        this.nome = object.nome;
+        this.email = object.email;
         this.titulo = object.titulo;
         this.local = object.local; 
         this.imgLink = object.imgLink;

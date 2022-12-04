@@ -1,3 +1,4 @@
+# suricatmos_achados_perdidos
 
 # Projeto Achados&Perdidos SMD
 
@@ -12,7 +13,6 @@
 ### O projeto serve para ajudar na divulgação de itens achados e perdidos no bloco do curso Sístemas e Mídias Digitais, através de funcionalidades como cadastro de objetos, sinalização de objetos, listagem de objetos e afins. 
 
 # Como executar o projeto
-
 ## Primeiro passo baixar o repositorio
 ## Configurar servidor
 ## Acessar arquivo index encontrado na seguinte pasta front>views>index.html
@@ -30,6 +30,7 @@
 ### npm install fs
 ### npm install --save nodemailer
 ### npm install dotenv
+### npm install --save cors
 
 # Configuração do banco de dados Passo-a-Passo
 ## 1 - No arquivo bin>servidor>src>app.js descomentar a linha 17 e roda o servidor (Criar aquivo do banco de dados)
@@ -43,4 +44,4 @@
 
 # Mapeamento de funcionalidades
 
-![tabela de funcionalidades](https://github.com/Waycon-Sales/suricatmos_achados_perdidos/blob/service/bin/front/views/Images/tableread.jpeg)
+![tabela de funcionalidades](https://github.com/Waycon-Sales/suricatmos_achados_perdidos/blob/master/bin/front/views/Images/tableread.jpeg)

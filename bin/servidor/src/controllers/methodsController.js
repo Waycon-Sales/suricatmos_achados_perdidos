@@ -51,6 +51,12 @@ const controller = {
                         if(object.desc == null || object.desc == undefined){
                             object.desc = "";
                         }
+                        if(object.email == null || object.email == undefined){
+                            object.email = "";
+                        }
+                        if(object.nome == null || object.nome == undefined){
+                            object.nome = "";
+                        }
                         object.codObjeto = object.categoria+"#";
                         object.status = "ativo";
 
@@ -122,6 +128,12 @@ const controller = {
                     try{
                         if(object.desc == null || object.desc == undefined){
                             object.desc = "";
+                        }
+                        if(object.email == null || object.email == undefined){
+                            object.email = "";
+                        }
+                        if(object.nome == null || object.nome == undefined){
+                            object.nome = "";
                         }
     
                         let codObjectUpdate = await objectController.updateObject(object);
