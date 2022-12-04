@@ -5,7 +5,7 @@ const objectController = {
 
         async insertObject(object){
             return dbOpen.openDb().then(db=>{
-                db.run('INSERT INTO objetos(titulo, local, categoria, desc, codObjeto, status, tipo, imgLink) VALUES (?,?,?,?,?,?,?,?)', [object.titulo, object.local, object.categoria, object.desc,object.codObjeto, object.status, object.tipo, object.imgLink]);
+                db.run('INSERT INTO objetos(titulo, local, categoria, desc, codObjeto, status, tipo, imgLink, nome, email) VALUES (?,?,?,?,?,?,?,?,?,?)', [object.titulo, object.local, object.categoria, object.desc,object.codObjeto, object.status, object.tipo, object.imgLink, object.nome, object.email]);
                 return db.get('SELECT id FROM objetos WHERE codObjeto = ? ORDER BY id DESC LIMIT 1', [object.codObjeto]).then(res=>res);
             });
         },
@@ -28,7 +28,7 @@ const objectController = {
             
             return dbOpen.openDb().then(db=>{
                 
-                db.run('UPDATE objetos SET titulo = ?, local = ?, categoria = ?, tipo = ?, status = ?, desc = ? WHERE id = ?', [object.titulo, object.local, object.categoria, object.tipo, object.status,object.desc, object.id]);
+                db.run('UPDATE objetos SET titulo = ?, local = ?, categoria = ?, tipo = ?, status = ?, desc = ?, nome = ?, email = ? WHERE id = ?', [object.titulo, object.local, object.categoria, object.tipo, object.status,object.desc,object.nome, object.email, object.id]);
                 return db.get('SELECT codObjeto FROM objetos WHERE id = ? ORDER BY id DESC LIMIT 1', [object.id]).then(res=>res);
             });
         },

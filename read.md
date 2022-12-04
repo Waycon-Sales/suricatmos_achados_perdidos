@@ -30,6 +30,7 @@
 ### npm install fs
 ### npm install --save nodemailer
 ### npm install dotenv
+### npm install --save cors
 
 # Configuração do banco de dados Passo-a-Passo
 ## 1 - No arquivo bin>servidor>src>app.js descomentar a linha 17 e roda o servidor (Criar aquivo do banco de dados)
