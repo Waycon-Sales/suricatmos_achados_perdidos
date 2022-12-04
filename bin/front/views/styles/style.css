@@ -6,7 +6,9 @@
     --color-main3: #d9d9d9;
     --color-main4: #676767;
     --color-mainY: #FEC456;
+    --color-mainY2: #DDBA30;
     --color-mainB: #4A35AE;
+    --color-mainB2: #5368ff;
 }
 
 
@@ -97,6 +99,46 @@ main{
     color: var(--color-main1);
 }
 
+.findName{
+    display: none;
+}
+
+#findNameLabel{
+    display: none;
+}
+
+.findMail{
+    display: none;
+}
+
+.viewFindImage{
+    border-radius: 20px !important;
+    background-color: var(--color-mainB2) !important;
+    height: 340px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding: 0 !important;  
+}
+
+.viewFindImage div{
+    border-radius: 20px !important;
+    margin-bottom: 5px !important;
+    width: 95% !important;
+    height: 320px !important;
+    background-color: var(--color-mainB) !important;
+    border-radius: 20px;
+    margin-top: -6px !important;
+}
+
+.viewFindImage div img{
+    width: 95% !important;
+    border-radius: 20px !important;
+}
+
+#findMailLabel{
+    display: none;
+}
+
 .modalCadText p{
     font-weight: 700;
     font-size: 25px;
@@ -122,6 +164,31 @@ main{
     
 }
 
+.cardFindObj{
+    background-color: var(--color-mainB) !important;
+    width: 65% !important;
+}
+
+.cardFindObj label{
+    color: white !important;
+    font-weight: 400 !important;
+    margin-top: 6px !important;
+}
+
+.selectedOptionFind{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+.selectedOptionFind img{
+    margin-right: 5px !important;
+}
+
+.selectedOptionFind label{
+    font-size: 15px !important;
+}
+
 .lostTextTop h1{
     font-weight: 700;
     font-size: 25px;
@@ -131,9 +198,62 @@ main{
 }
 
 .lostTextTop p{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.userInfoCad div{
+    font-family: 'Nunito' !important;
+}
+
+.findTextTop h1{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: var(--color-main1);
+    margin-bottom: -5px;
+}
+
+.radioButton{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: initial !important;
+    margin-bottom: 120px !important;
+}
+
+.radioButton div{
+    border: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: initial !important;
+    justify-content: flex-start !important;
+    margin-bottom: -90px !important;
+}
+
+.radioButton div input{
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 10px !important;
+}
+
+.radioButton div label{
+    font-size: 15px;
+    line-height: 15px;
+    margin-top: 6px !important;
+}
+
+
+
+.findTextTop h1 b{
+    color: var(--color-mainB);
+}
+
+.findTextTop p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
 }
 
 .userInfoCad{
@@ -190,17 +310,27 @@ main{
 }
 
 .adjustElements{
-    margin-top: 20px;
+    margin-top: 30px !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
+    border: 0 !important;
     background-color: transparent !important;
     width: 80%;
 }
 
+.adjustElements img{
+    margin-top: -15px !important;    
+}
+
+.adjustElements select{
+    font-size: 15px;
+}
+
 .lostImageUpload{
     width: 230px;
+    border: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: baseline !important;
@@ -213,6 +343,7 @@ main{
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
+    border: 0 !important;
 
 }
 
@@ -242,11 +373,14 @@ main{
     display: flex !important;
     justify-content: center;
     align-items: center !important;
+    padding-top: 0 !important;
 }
 
 .uploadedImageSrc{
+    border-radius: 10px !important;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .imgIcon{
@@ -259,6 +393,7 @@ main{
     justify-content: space-between;
     align-items: center;
     background-color: transparent !important;
+    border: 0 !important;
 }
 
 #lostTextarea{
@@ -394,11 +529,12 @@ main{
     display: flex;
     flex-direction: column;
     padding-top: 7px;
-    border-radius: 50px;
-    background-color: var(--color-main3);
+    border-radius: 10px;
+    border: 1px solid var(--color-main1);
+    background-color: transparent;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 45px;
     margin-bottom: 30px;
 }
 
@@ -412,10 +548,15 @@ main{
 
 .submitCancelButtons{
     display: flex !important;
+    border: 0 !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     background-color: transparent !important;
+}
+
+.lostTextTop h1 b{
+    color: var(--color-mainY2);
 }
 
 .resetButton{
@@ -430,22 +571,67 @@ main{
     color: var(--color-main1);
 }
 
-.submitButton{
+.falseSubmitButton{  
     width: 45%;
     border-radius: 40px !important;
     height: 45px !important;
     font-weight: 500;
+    background-color: var(--color-main1) !important;
     font-size: 15px;
     line-height: 18px;
     color: var(--color-main1);
 }
 
-.userInfoCad div input{
-    background-color: var(--color-main3);
+.falseSubmitButton button{  
+    width: 100%;
+    height: 100%;
     border: 0;
-    width: 85%;
-    height: 26px;
+    background-color: transparent;
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 8px !important;
+
+}
+
+.resetButton button{  
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-main1);
+    margin-bottom: 8px !important;
+
+}
+
+.userInfoCad div input{
+    background-color: transparent;
+    border: 0;
+    width: 90%;
+    height: 40px;
     outline: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-family: 'Nunito';
+}
+
+.userInfoCad div select{
+    font-family: 'Nunito';
+    padding-bottom: 10px;
+}
+
+.userInfoCad div textarea{
+    font-family: 'Nunito';
+}
+
+.userInfoCad div input::placeholder{
+    color: var(--color-main2);
 }
 
 #btnOpenCadStart{
@@ -645,3 +831,4 @@ a.active span.navText{
     border-radius: 100%;
     background-color: var(--color-main1);
 }
+
