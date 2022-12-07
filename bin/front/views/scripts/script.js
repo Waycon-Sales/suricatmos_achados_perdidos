@@ -74,9 +74,7 @@ $('#lostObjectSubmit').click(function(e){
         alert("Por favor, preencha todos os campos obrigatórios. Campos não obrigatórios (Imagem e possível local onde perdeu)");
         return false;
     }
-
-    //$("#modalViewLost").css("display", "block");
-    registerObject("perdido");
+    $("#modalViewLost").css("display", "block");
     
 });
 
@@ -109,6 +107,10 @@ $('#findObjectSubmit').click(function(e){
 
 $("#returnViewFind").click(function () {
     $("#modalViewFind").css("display", "none");
+})
+
+$("#returnViewLost").click(function () {
+    $("#modalViewLost").css("display", "none");
 })
 
 

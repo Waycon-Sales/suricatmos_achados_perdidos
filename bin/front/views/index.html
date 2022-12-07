@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -203,23 +204,87 @@
                         <div class="lostImgObject" style="background-color: transparent;">
                             <div class="uploadImage">
                                 <input type="file" name="lostImgObject" style="display: none;" id="lostImgObject"
-                                    accept="image/jpeg, image/png" onchange="previewImg(event,'perdido')"/>
+                                    accept="image/jpeg, image/png" onchange="previewImg(event,'perdido')" />
                                 <label class="imgIcon" for="lostImgObject"><img src="images/Icons/iconAddImg.png"
                                         alt=""></label>
                             </div>
                             <div class="uploadedImage">
-                                <img src="" alt="Imagem Upada" id="imagemUpadaPerdido"class="uploadedImageSrc">
+                                <img src="" alt="Imagem Upada" id="imagemUpadaPerdido" class="uploadedImageSrc">
                             </div>
                         </div>
                     </div>
                     <div class="submitCancelButtons">
                         <div class="resetButton">
-                            <button type="reset" id="lostObjectReset" style="background-color: transparent;">Resetar</button>
+                            <button type="reset" id="lostObjectReset"
+                                style="background-color: transparent;">Resetar</button>
                         </div>
                         <div class="falseSubmitButton">
                             <button type="button" id="lostObjectSubmit">Confirmar</button>
                         </div>
                     </div>
+                </div>
+
+                <!-- MODAL VISUALIZAÇÃO CADASTRO PERDIDO -->
+
+                <div class="modalViewLost" id="modalViewLost" style="z-index: 4000;">
+                    <div class="modalCadTop" style="gap: 30px;">
+                        <div class="buttonCoseCad">
+                            <button type="button" class="buttonReturn" id="returnViewLost">
+                                <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro"
+                                    class="iconButtonCad">
+                            </button>
+                        </div>
+                        <div class="findTextTop">
+                            <h1>Cadastro de <b style="color: #DDBA30;">objeto perdido</b></h1>
+                            <p>Confirme se todos as informações estão corretas. Após a confirmação não será possível
+                                fazer mudanças.
+                            </p>
+                        </div>
+                        <div class="userInfoCad">
+                            <label for="yourNameFind">Seu nome</label>
+                            <div class="findName">
+                                <input type="text" placeholder="Nome Sobrenome" name="yourNameLost"
+                                    id="yourNameLost">
+                            </div>
+                            <label for="yourMailFind">Seu e-mail</label>
+                            <div class="findMail">
+                                <input type="email" placeholder="email@email.com" name="yourMailLost"
+                                    id="yourMailLost">
+                            </div>
+                            <h2>Pré Visualização</h1>
+                                <div class="viewLostImage">
+                                    <div>
+                                        <img src="" alt="Imagem objeto Achado" class="uploadedImageSrc"
+                                            id="imgPreviewPerdido">
+                                    </div>
+                                </div>
+                                <h2 id="textTitleLost">Teste</h2>
+                                <div class="cardLostObj">
+                                    <label>Objeto achado</label>
+                                </div>
+                                <div class="reviewFindInfo">
+                                    <div class="categorieReview">
+                                        <img src="images/Icons/categorieReviewIcon.png" alt="Categoria Cadastrada">
+                                        <span id="categorieReviewLost"></span>
+                                    </div>
+                                    <div class="placeReview">
+                                        <img src="images/Icons/placeReviewIcon.png" alt="Local Achado">
+                                        <span id="placeReviewLost"></span>
+                                        <span id="placeReviewEspecificLost"></span>
+                                    </div>
+                                    <div class="postRelevance">
+                                        <img src="images/Icons/relevanceIcon.png" alt="Relevância">
+                                        <span id="postRelevanceLost">Média</span>
+                                        <span>Relevância</span>
+                                    </div>
+                                </div>
+                                <div style="border: 0; margin-top:25px;">
+                                    <button type="button" id="confirmRegisterLostObject"
+                                        onclick="registerObject('perdido')">Confirmar</button>
+                                </div>
+                        </div>
+                    </div>
+
                 </div>
             </form>
         </div>
@@ -249,7 +314,8 @@
                             <label>Posse do objeto</label>
                         </div>
                         <div>
-                            <input type="radio" name="findObj" id="coordObj" value="coordObj" onclick="getRadioVal()" checked="true">
+                            <input type="radio" name="findObj" id="coordObj" value="coordObj" onclick="getRadioVal()"
+                                checked="true">
                             <label id="coordObjText" for="coordOjb">Entregar para a Coordenação</label>
                         </div>
                         <div>
@@ -259,7 +325,7 @@
                     </div>
                     <label id="findNameLabel" for="findName">Seu nome</label>
                     <div class="findName" style="display: none;">
-                        <input type="text" name="findName" placeholder="Nome Sobrenome"  id="findName">
+                        <input type="text" name="findName" placeholder="Nome Sobrenome" id="findName">
                     </div>
                     <label id="findMailLabel" for="findMail">E-mail para notificação</label>
                     <div class="findMail" style="display: none;">
@@ -389,35 +455,38 @@
                                 <input type="email" placeholder="email@email.com" name="yourMailFind" id="yourMailFind">
                             </div>
                             <h2>Pré Visualização</h1>
-                            <div class="viewFindImage">
-                                <div>
-                                    <img src="" alt="Imagem objeto Achado" class="uploadedImageSrc" id="imgPreviewAchado">
+                                <div class="viewFindImage">
+                                    <div>
+                                        <img src="" alt="Imagem objeto Achado" class="uploadedImageSrc"
+                                            id="imgPreviewAchado">
+                                    </div>
                                 </div>
-                            </div>
-                            <h2 id="textTitleFind">Teste</h2>
-                            <div class="cardFindObj">
-                                <label>Objeto achado</label>
-                            </div>
-                            <div class="reviewFindInfo">
-                                <div class="categorieReview">
-                                    <img src="images/Icons/categorieReviewIcon.png" alt="Categoria Cadastrada">
-                                    <span id="categorieReview"></span>
+                                <h2 id="textTitleFind">Teste</h2>
+                                <div class="cardFindObj">
+                                    <label>Objeto achado</label>
                                 </div>
-                                <div class="placeReview">
-                                    <img src="images/Icons/placeReviewIcon.png" alt="Local Achado">
-                                    <span id="placeReview"></span>
-                                    <span id="placeReviewEspecific"></span>
+                                <div class="reviewFindInfo">
+                                    <div class="categorieReview">
+                                        <img src="images/Icons/categorieReviewIcon.png" alt="Categoria Cadastrada">
+                                        <span id="categorieReview"></span>
+                                    </div>
+                                    <div class="placeReview">
+                                        <img src="images/Icons/placeReviewIcon.png" alt="Local Achado">
+                                        <span id="placeReview"></span>
+                                        <span id="placeReviewEspecific"></span>
+                                    </div>
+                                    <div class="postRelevance">
+                                        <img src="images/Icons/relevanceIcon.png" alt="Relevância">
+                                        <span id="postRelevance">Média</span>
+                                        <span>Relevância</span>
+                                    </div>
                                 </div>
-                                <div class="postRelevance">
-                                    <img src="images/Icons/relevanceIcon.png" alt="Relevância">
-                                    <span id="postRelevance"></span>
-                                    <span>Relevância</span>
+                                <div style="border: 0; margin-top:25px;">
+                                    <button type="button" id="confirmRegisterFindObject"
+                                        onclick="registerObject('achado')">Confirmar</button>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                    <button type="button" id="confirmRegisterFindObject" onclick="registerObject('achado')">Confirmar</button>
-                </div>
+                    </div>                                       
             </form>
         </div>
     </div>
@@ -426,7 +495,8 @@
 
 
 </body>
-    <script src="scripts/jquery-3.6.1.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="../Flickity/flickity.pkgd.min.js"></script>
+<script src="scripts/jquery-3.6.1.min.js"></script>
+<script src="scripts/script.js"></script>
+<script src="../Flickity/flickity.pkgd.min.js"></script>
+
 </html>
