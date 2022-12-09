@@ -86,7 +86,7 @@ main{
 }
 
 .modalSucessFind{
-    display: none !important;
+    
     position: fixed;
     top: 20%;
     width: 101%;

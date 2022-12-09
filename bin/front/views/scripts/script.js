@@ -323,10 +323,18 @@ changeValsFind();
             .done(function(msg){
                 console.log(msg);
                alert(msg.message); 
-               $("#modalSucessFind").css("display","block");
+               if(type == 'perdido'){
+                $("#modalSucessLost").css("display","block");
                     $("#modalViewFind").css("display","none");
                     $("#modalCadFind").css("display","none");
-                    $("main").css("filter","blur(5px)");              
+                    $("main").css("filter","blur(5px)");
+               }
+               else{
+                $("#modalSucessFind").css("display","block");
+                    $("#modalViewFind").css("display","none");
+                    $("#modalCadFind").css("display","none");
+                    $("main").css("filter","blur(5px)");
+               }             
             })
             .fail(function(jqXHR, textStatus, msg){
                 alert("Ocorreu um erro ao registrar objeto, tente novamente mais tarde!");                                  
@@ -346,10 +354,20 @@ changeValsFind();
             })
             .done(function(msg){
                console.log(msg);
-               $("#modalSucessFind").css("display","block");
+               alert(msg.message);
+               if(type == 'perdido'){
+                $("#modalSucessLost").css("display","block");
                     $("#modalViewFind").css("display","none");
                     $("#modalCadFind").css("display","none");
-                    $("main").css("filter","blur(5px)"); 
+                    $("main").css("filter","blur(5px)");
+               }
+               else{
+                $("#modalSucessFind").css("display","block");
+                    $("#modalViewFind").css("display","none");
+                    $("#modalCadFind").css("display","none");
+                    $("main").css("filter","blur(5px)");
+               }
+                
             })
             .fail(function(jqXHR, textStatus, msg){
                 alert(msg);
