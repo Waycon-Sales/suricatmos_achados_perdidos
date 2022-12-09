@@ -323,10 +323,17 @@ changeValsFind();
             .done(function(msg){
                 console.log(msg);
                alert(msg.message); 
-               $("#modalSucessFind").css("display","block");
-                    $("#modalViewFind").css("display","none");
-                    $("#modalCadFind").css("display","none");
-                    $("main").css("filter","blur(5px)");              
+               if(type == 'perdido'){
+                $("#modalSucessFind").css("display","block");
+                $("#modalViewFind").css("display","none");
+                $("#modalCadFind").css("display","none");
+                $("main").css("filter","blur(5px)");
+                return 
+            }
+            $("#modalSucessLost").css("display","block");
+                $("#modalViewLost").css("display","none");
+                $("#modalCadLost").css("display","none");
+                $("main").css("filter","blur(5px)");               
             })
             .fail(function(jqXHR, textStatus, msg){
                 alert("Ocorreu um erro ao registrar objeto, tente novamente mais tarde!");                                  
@@ -346,10 +353,18 @@ changeValsFind();
             })
             .done(function(msg){
                console.log(msg);
-               $("#modalSucessFind").css("display","block");
+                if(type == 'perdido'){
+                    $("#modalSucessFind").css("display","block");
                     $("#modalViewFind").css("display","none");
                     $("#modalCadFind").css("display","none");
+                    $("main").css("filter","blur(5px)");
+                    return 
+                }
+                $("#modalSucessLost").css("display","block");
+                    $("#modalViewLost").css("display","none");
+                    $("#modalCadLost").css("display","none");
                     $("main").css("filter","blur(5px)"); 
+               
             })
             .fail(function(jqXHR, textStatus, msg){
                 alert(msg);
