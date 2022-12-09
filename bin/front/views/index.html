@@ -18,14 +18,14 @@
                 <img src="Images/Icons/iconHomeActive.png" class="iconNav" alt="Início">
                 <span class="navText">Início</span>
             </a>
-        </div>       
+        </div>
         <div class="buttonNavPlus">
             <div>
-            <button id="btnOpenCadStart">
-                <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
-                <span>Adicionar</span>
-            </button> 
-        </div>    
+                <button id="btnOpenCadStart">
+                    <img src="images/Icons/iconPlus.png" class="iconNavPlus" alt="Mais">
+                    <span>Adicionar</span>
+                </button>
+            </div>
         </div>
         <div class="buttonNav">
             <a id="linkNav2">
@@ -64,7 +64,7 @@
                 <div class="gallery-cell"></div>
                 <div class="gallery-cell"></div>
                 <div class="gallery-cell"></div>
-            </div>           
+            </div>
         </div>
         <div class="foundRecently">
             <div class="topFoundText">
@@ -101,27 +101,68 @@
         <div class="cardLostRecently1">
             <div class="cardLost1">
                 <span id="titleLost1">Teste title</span>
-                <span id="textLost1">Texto de teste muito grande para saber se vai ou não funcionar esse card de mensagem de perdido</span>
+                <span id="textLost1">Texto de teste muito grande para saber se vai ou não funcionar esse card de
+                    mensagem de perdido</span>
             </div>
             <div class="cardLost2">
                 <span id="titleLost2">Teste title</span>
-                <span id="textLost2">Texto de teste muito grande para saber se vai ou não funcionar esse card de mensagem de perdido</span>
+                <span id="textLost2">Texto de teste muito grande para saber se vai ou não funcionar esse card de
+                    mensagem de perdido</span>
             </div>
         </div>
         <div class="cardLostRecently2">
             <div class="cardLost3">
                 <span id="titleLost3">Teste title</span>
-                <span id="textLost3">Texto de teste muito grande para saber se vai ou não funcionar esse card de mensagem de perdido</span>
+                <span id="textLost3">Texto de teste muito grande para saber se vai ou não funcionar esse card de
+                    mensagem de perdido</span>
             </div>
             <div class="cardLost4">
                 <span id="titleLost4">Teste title</span>
-                <span id="textLost4">Texto de teste muito grande para saber se vai ou não funcionar esse card de mensagem de perdido</span>
+                <span id="textLost4">Texto de teste muito grande para saber se vai ou não funcionar esse card de
+                    mensagem de perdido</span>
             </div>
         </div>
-        
-        
-        
+
     </main>
+
+    <div class="modalSucessFind" id="modalSucessFind">
+        <div class="sucessContentFind">
+            <div class="topContentFind">
+                <h1>
+                    Tudo certo!
+                </h1>
+                <button class="closeSuccesFind">
+                    <img src="images/Icons/closeIcon.png" alt="botão fechar">
+                </button>
+            </div>
+            <div class="xaxadoCode">
+                <img src="images/icons/SucessXaxado.png" alt="Xaxado Imagem">
+                <div class="codeFind">
+                    <p>Acompanhe o status do objeto</p>
+                    <p>Código: <span id="codeFinded"></span></p>
+                </div>
+            </div>
+            <div class="textSucessFind">
+                <h2>Seu post já está rolando pelo site.</h2>
+                <p>Lembre-se de entregar o objeto para a coordenação o quanto antes.</p>
+            </div>
+            <div class="errorButton">
+                <h2>Percebeu algum erro?</h2>
+                <a href="">Sinalizar</a>
+            </div>
+            <div class="buttonSucessFind">
+                <button type="button" id="shareButton">
+                   <img src="images/icons/shareIcon.png" alt="imagemCompartilhar">
+                   <span>Compartilhar</span>                                       
+                </button>
+                <button type="button" id="viewButton">
+                    <img src="images/icons/viewIcon.png" alt="imagemVisualizar">
+                    <span>Visualizar</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
 
     <!-- MODAL CADASTRO DE OBJETO -->
 
@@ -258,7 +299,7 @@
                                 <input type="file" name="lostImgObject" style="display: none;" id="lostImgObject"
                                     accept="image/jpeg, image/png" onchange="previewImg(event,'perdido')" />
                                 <label class="imgIcon" for="lostImgObject"><img src="images/Icons/iconAddImg.png"
-                                        alt=""></label>
+                                        alt=""></label>                                       
                             </div>
                             <div class="uploadedImage">
                                 <img src="" alt="Imagem Upada" id="imagemUpadaPerdido" class="uploadedImageSrc">
@@ -282,8 +323,7 @@
                     <div class="modalCadTop" style="gap: 30px;">
                         <div class="buttonCoseCad">
                             <button type="button" class="buttonReturn" id="returnViewLost">
-                                <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro"
-                                    class="iconButtonCad">
+                                <img src="images/Icons/iconReturn.png" alt="Retornar Cadastro" class="iconButtonCad">
                             </button>
                         </div>
                         <div class="findTextTop">
@@ -295,13 +335,11 @@
                         <div class="userInfoCad">
                             <label for="yourNameFind">Seu nome</label>
                             <div class="findName">
-                                <input type="text" placeholder="Nome Sobrenome" name="yourNameLost"
-                                    id="yourNameLost">
+                                <input type="text" placeholder="Nome Sobrenome" name="yourNameLost" id="yourNameLost">
                             </div>
                             <label for="yourMailFind">Seu e-mail</label>
                             <div class="findMail">
-                                <input type="email" placeholder="email@email.com" name="yourMailLost"
-                                    id="yourMailLost">
+                                <input type="email" placeholder="email@email.com" name="yourMailLost" id="yourMailLost">
                             </div>
                             <h2>Pré Visualização</h1>
                                 <div class="viewLostImage">
@@ -342,6 +380,8 @@
         </div>
     </div>
     </div>
+
+
 
     <!-- MODAL CADASTRO DE OBJETO ACHADO -->
 
@@ -538,10 +578,12 @@
                                         onclick="registerObject('achado')">Confirmar</button>
                                 </div>
                         </div>
-                    </div>                                       
+                    </div>
             </form>
         </div>
     </div>
+
+
 
 
 

@@ -85,6 +85,105 @@ main{
     background-color: transparent;
 }
 
+.modalSucessFind{
+    display: none !important;
+    position: fixed;
+    top: 20%;
+    width: 101%;
+    height: 100%;
+    background-color: white;
+    z-index: 6000;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 -3px 30px var(--color-main1);
+}
+
+.sucessContentFind{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+.topContentFind button{
+    background-color: transparent;
+    border: none;
+}
+
+.sucessContentFind div{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow:auto;
+    margin-bottom: 15px;
+}
+
+.buttonSucessFind button{
+    font-family: 'Nunito';
+    font-size: 17px;
+    font-weight: 400;
+    width: 47%;
+    background-color: var(--color-main1);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    height: 45px;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+
+#shareButton{
+    background-color: transparent !important;
+    border: 1px solid var(--color-main1) !important;
+    color: var(--color-main1);
+    font-weight: 600;    
+}
+
+.codeFind{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+    background-color: var(--color-mainB);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+.textSucessFind{
+    display: flex;
+    flex-direction: column !important;
+        
+}
+
+.textSucessFind h2{
+    font-size: 15px;
+    margin-bottom: -15px;
+}
+
+
+.errorButton{
+    position: fixed;
+    bottom: 10%;
+    left: 25%;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.errorButton h2{
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+
 .modalCadText{
     display: flex;
     flex-direction: column;

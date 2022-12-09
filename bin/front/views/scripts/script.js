@@ -322,10 +322,14 @@ changeValsFind();
             })
             .done(function(msg){
                 console.log(msg);
-               alert(msg.message);
+               alert(msg.message); 
+               $("#modalSucessFind").css("display","block");
+                    $("#modalViewFind").css("display","none");
+                    $("#modalCadFind").css("display","none");
+                    $("main").css("filter","blur(5px)");              
             })
             .fail(function(jqXHR, textStatus, msg){
-                alert("Ocorreu um erro ao registrar objeto, tente novamente mais tarde!");
+                alert("Ocorreu um erro ao registrar objeto, tente novamente mais tarde!");                                  
             });
     }else{
         if(imagemObject[0].files[0].type == "image/png" || imagemObject[0].files[0].type == "image/jpeg" || imagemObject[0].files[0].type == "image/jpg" ){
@@ -342,6 +346,10 @@ changeValsFind();
             })
             .done(function(msg){
                console.log(msg);
+               $("#modalSucessFind").css("display","block");
+                    $("#modalViewFind").css("display","none");
+                    $("#modalCadFind").css("display","none");
+                    $("main").css("filter","blur(5px)"); 
             })
             .fail(function(jqXHR, textStatus, msg){
                 alert(msg);
